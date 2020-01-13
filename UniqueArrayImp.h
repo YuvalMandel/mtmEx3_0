@@ -10,11 +10,12 @@ template<class Element, class Compare>
 UniqueArray<Element, Compare>::UniqueArray(unsigned int size):
         array_size(size), num_of_element(0)
 {
+
     array = new Element*[array_size];
 
     for (int i=0; i<array_size; i++){
 
-        array[i]=nullptr;
+        array[i] = nullptr;
     }
 
 }
@@ -25,7 +26,7 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
 
     array_size = other.array_size;
     num_of_element = other.num_of_element;
-    array=new(Element*[array_size]);
+    array=new Element*[array_size];
 
 
     for (int i=0; i<other.array_size; i++)
@@ -44,35 +45,7 @@ UniqueArray<Element, Compare>::~UniqueArray() {
     }
     delete [] array;
 }
-//**********************************************************************
-template<class Element, class Compare>
-unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
 
-    int *int_ptr;
-    if (array_size == num_of_element)
-    {
-        throw UniqueArrayIsFullException();
-    }
-
-    if(getIndex(&element,int_ptr))
-    {
-        return *int_ptr;
-    }
-    for(int i=0; i<array_size; i++)
-    {
-        if(array[i] == nullptr)
-        {
-            array[i] = new Element(element);
-
-            num_of_element++;
-
-            return i;
-        }
-    }
-
-    return 0;
-
-}
 //**********************************************************************
 template<class Element, class Compare>
 bool UniqueArray<Element, Compare>::getIndex(const Element &element,
@@ -91,15 +64,47 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
     return false;
 }
 
+//**********************************************************************
+
+
+template<class Element, class Compare>
+unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
+
+    unsigned int *int_ptr;
+    if (array_size == num_of_element)
+    {
+        throw UniqueArrayIsFullException();
+    }
+
+    if(getIndex(element,*int_ptr))
+    {
+        return *int_ptr;
+    }
+    for(int i=0; i<array_size; i++)
+    {
+        if(array[i] == nullptr)
+        {
+            array[i] = new Element(element);
+
+            num_of_element++;
+
+            return i;
+        }
+    }
+
+    return 0;
+
+}
+
 
 //**********************************************************************
 template<class Element, class Compare>
 const Element *
 UniqueArray<Element, Compare>::operator[](const Element &element) const {
-    int* int_ptr;
-    if(getIndex(element, int_ptr))
+    unsigned int* int_ptr;
+    if(getIndex(element, *int_ptr))
     {
-        return array[int_ptr];
+        return array[*int_ptr];
     }
     return nullptr;
 }
@@ -111,12 +116,12 @@ UniqueArray<Element, Compare>::operator[](const Element &element) const {
 template<class Element, class Compare>
 bool UniqueArray<Element, Compare>::remove(const Element &element) {
 
-    int* int_ptr;
-    if(getIndex(element,int_ptr))
+    unsigned int* int_ptr;
+    if(getIndex(element,*int_ptr))
     {
-        delete array[int_ptr];
+        delete array[*int_ptr];
 
-        array[int_ptr] = nullptr;
+        array[*int_ptr] = nullptr;
 
         num_of_element--;
 
@@ -142,7 +147,26 @@ unsigned int UniqueArray<Element, Compare>::getSize() const {
 
     return array_size;
 }
-//**********************************************************************
 
+
+
+
+//**********************************************************************
+template<class Element, class Compare>
+UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
+(const UniqueArray::Filter &f) const {
+
+    UniqueArray<Element,Compare> new_array(array_size);
+
+
+    for(int i=0; i<array_size; i++)
+    {
+        if(filter(array[i]))
+
+            new_array.array[i]=array[i];
+    }
+
+    return new_array;
+}
 
 #endif //MTM3_UNIQUEARRAYIMP_H
