@@ -52,7 +52,7 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
                                              unsigned int &index) const {
     Compare c;
 
-    for(int i = 0; i < array_size; i++)
+    for(unsigned int i = 0; i < array_size; i++)
     {
         if(array[i] != nullptr) {
 
@@ -74,16 +74,20 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
 template<class Element, class Compare>
 unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
 
-    unsigned int *int_ptr;
+    unsigned int int_temp;
+
+    //auto int_ptr = new unsigned int;
+
+    if(getIndex(element,int_temp))
+    {
+        return int_temp;
+    }
+
     if (array_size == num_of_element)
     {
         throw UniqueArrayIsFullException();
     }
 
-    if(getIndex(element,*int_ptr))
-    {
-        return *int_ptr;
-    }
     for(int i=0; i<array_size; i++)
     {
         if(array[i] == nullptr)
@@ -96,6 +100,8 @@ unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
         }
     }
 
+    //delete int_ptr;
+
     return 0;
 
 }
@@ -105,11 +111,26 @@ unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
 template<class Element, class Compare>
 const Element *
 UniqueArray<Element, Compare>::operator[](const Element &element) const {
-    unsigned int* int_ptr;
-    if(getIndex(element, *int_ptr))
+
+//    unsigned int* int_ptr;
+
+//    auto int_ptr = new unsigned int;
+
+    unsigned int temp_int = 0;
+
+    if(getIndex(element, temp_int))
     {
-        return array[*int_ptr];
+
+//        unsigned int temp = *int_ptr;
+//
+//        delete int_ptr;
+
+        return array[temp_int];
+
     }
+
+//    delete int_ptr;
+
     return nullptr;
 }
 
