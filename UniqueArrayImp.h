@@ -186,9 +186,14 @@ UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
 
     for(int i=0; i<array_size; i++)
     {
-        if(f(*array[i]))
+        if(f(*array[i])) {
 
-            new_array.array[i]=array[i];
+            new_array.array[i] = array[i];
+
+            new_array.num_of_element++;
+
+        }
+
     }
 
     return new_array;
