@@ -39,9 +39,13 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
 //**********************************************************************
 template<class Element, class Compare>
 UniqueArray<Element, Compare>::~UniqueArray() {
-    for(int i=0; i<array_size;i++)
+    for(int i = 0; i <array_size; i++)
     {
-        delete array[i];
+        if(array[i] != nullptr){
+
+            delete array[i];
+            
+        }
     }
     delete [] array;
 }
