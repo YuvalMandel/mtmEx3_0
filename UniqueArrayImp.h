@@ -155,7 +155,18 @@ unsigned int UniqueArray<Element, Compare>::getSize() const {
 template<class Element, class Compare>
 UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
 (const UniqueArray::Filter &f) const {
-    return UniqueArray(0);
+
+    UniqueArray<Element,Compare> new_array(array_size);
+
+
+    for(int i=0; i<array_size; i++)
+    {
+        if(filter(array[i]))
+
+            new_array.array[i]=array[i];
+    }
+
+    return new_array;
 }
 
 #endif //MTM3_UNIQUEARRAYIMP_H
