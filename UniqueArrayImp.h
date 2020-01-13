@@ -141,18 +141,21 @@ UniqueArray<Element, Compare>::operator[](const Element &element) const {
 template<class Element, class Compare>
 bool UniqueArray<Element, Compare>::remove(const Element &element) {
 
-    unsigned int* int_ptr;
-    if(getIndex(element,*int_ptr))
-    {
-        delete array[*int_ptr];
+    unsigned int int_temp;
 
-        array[*int_ptr] = nullptr;
+    if(getIndex(element,int_temp))
+    {
+        delete array[int_temp];
+
+        array[int_temp] = nullptr;
 
         num_of_element--;
 
         return true;
     }
+
     return false;
+
 }
 
 
