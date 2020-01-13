@@ -1,8 +1,18 @@
 #ifndef MTMPARKINGLOT_UNIQUEARRAY_H
 #define MTMPARKINGLOT_UNIQUEARRAY_H
 
+#include <functional>
+
 template <class Element, class Compare = std::equal_to<Element>>
 class UniqueArray {
+
+    unsigned array_size;
+
+    Element** array;
+
+    unsigned num_of_element;
+
+
 public:
 
     UniqueArray(unsigned int size);
