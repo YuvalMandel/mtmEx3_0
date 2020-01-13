@@ -54,12 +54,16 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
 
     for(int i = 0; i < array_size; i++)
     {
-        if(c(element, *array[i]))
-        {
-            index = i;
+        if(array[i] != nullptr) {
 
-            return true;
+            if (c(element, *array[i])) {
+                index = i;
+
+                return true;
+            }
+
         }
+
     }
     return false;
 }
