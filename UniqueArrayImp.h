@@ -32,7 +32,14 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
 
     for (int i=0; i<other.array_size; i++)
     {
-        array[i] = new Element(*other.array[i]);
+        if(other.array[i]== nullptr)
+        {
+            array[i]= nullptr;
+        }
+        else {
+
+            array[i] = new Element(*other.array[i]);
+        }
     }
 
 }
