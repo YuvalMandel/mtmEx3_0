@@ -13,9 +13,10 @@ UniqueArray<Element, Compare>::UniqueArray(unsigned int size):
 
     array = new Element*[array_size];
 
-    for (int i=0; i<array_size; i++){
+    for (int i = 0; i < array_size; i++){
 
         array[i] = nullptr;
+
     }
 
 }
@@ -46,11 +47,13 @@ UniqueArray<Element, Compare>::~UniqueArray() {
 
             delete array[i];
 
-            array[i] = nullptr;
+            //array[i] = nullptr;
 
         }
     }
+
     delete[] array;
+
 }
 
 //**********************************************************************
@@ -64,9 +67,11 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
         if(array[i] != nullptr) {
 
             if (c(element, *array[i])) {
+
                 index = i;
 
                 return true;
+
             }
 
         }
@@ -119,24 +124,14 @@ template<class Element, class Compare>
 const Element *
 UniqueArray<Element, Compare>::operator[](const Element &element) const {
 
-//    unsigned int* int_ptr;
-
-//    auto int_ptr = new unsigned int;
-
     unsigned int temp_int = 0;
 
     if(getIndex(element, temp_int))
     {
 
-//        unsigned int temp = *int_ptr;
-//
-//        delete int_ptr;
-
         return array[temp_int];
 
     }
-
-//    delete int_ptr;
 
     return nullptr;
 }
