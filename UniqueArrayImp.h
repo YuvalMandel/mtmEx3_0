@@ -52,7 +52,7 @@ UniqueArray<Element, Compare>::~UniqueArray() {
     {
         if(array[i] != nullptr){
 
-            delete array[i];
+            remove(array[i]);
 
         }
 
