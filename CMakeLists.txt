@@ -6,6 +6,6 @@ set(CMAKE_CXX_STANDARD 14)
 include_directories(.)
 
 add_executable(mtmEx3_0
-        tests/UniqueArrayTest.cpp
+        main2.cpp
         UniqueArray.h
         UniqueArrayImp.h)

@@ -47,9 +47,8 @@ UniqueArray<Element, Compare>::~UniqueArray() {
 
             delete array[i];
 
-            //array[i] = nullptr;
-
         }
+
     }
 
     delete[] array;
