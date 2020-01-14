@@ -4,17 +4,56 @@
 #include "ParkingLotTypes.h"
 #include "Time.h"
 #include "ParkingSpot.h"
+#include "UniqueArray.h"
 
 namespace MtmParkingLot {
 
     using namespace ParkingLotUtils;
     using std::ostream;
 
+    class ParkingLocation: public ParkingSpot{
+
+    private:
+
+        bool occupied;
+        Time arrival_time;
+        LicensePlate license_plate;
+        int num_of_fines;
+
+    public:
+
+        explicit ParkingLocation(VehicleType parkingBlock = FIRST,
+                unsigned int parkingNumber = 0,
+                bool occupied = false,
+                Time arrival_time = Time(0, 0, 0),
+                LicensePlate license_plate = " ",
+                int num_of_fines = 0);
+
+    };
+
+    class ParkingLocationCompare{
+
+    public:
+        ParkingLocationCompare() = default;
+        bool operator()(const ParkingLocation& location_0,
+                        const ParkingLocation& location_1) const {
+
+            return (!(location_0 < location_1)) && (!(location_1 < location_0));
+
+        }
+
+    };
+
     class ParkingLot {
+    private:
+
+        UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
+
+
     public:
 
         ParkingLot(unsigned int parkingBlockSizes[]);
-        ~ParkingLot();
+//        ~ParkingLot();
         ParkingResult enterParking(VehicleType vehicleType, LicensePlate licensePlate, Time entranceTime);
         ParkingResult exitParking(LicensePlate licensePlate, Time exitTime);
         ParkingResult getParkingSpot(LicensePlate licensePlate, ParkingSpot& parkingSpot) const;
