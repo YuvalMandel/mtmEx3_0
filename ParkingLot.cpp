@@ -1,5 +1,6 @@
 #include "ParkingLot.h"
 #include "UniqueArray.h"
+#include "ParkingLotTypes.h"
 
 
 MtmParkingLot::ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
@@ -12,9 +13,12 @@ MtmParkingLot::ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     int car_end = parkingBlockSizes[0] + parkingBlockSizes[1] +
             parkingBlockSizes[2];
 
+    lot_size=car_end;
+
 
     for (int i = 0; i < motorbike_end; ++i) {
 
+        //ParkingLotUtils::Time arrival(0,0,0);
         ParkingLocation current_parking_location =
                 ParkingLocation(MOTORBIKE, i);
 
@@ -41,6 +45,63 @@ MtmParkingLot::ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     }
 
 }
+typedef UniqueArray< MtmParkingLot::ParkingLocation,
+        MtmParkingLot::ParkingLocationCompare> UniqueParkingArray;
+
+//filters
+//---------------------------------------------------
+
+//filter motorcycle type
+class TypeFilterMotorcycle: public UniqueParkingArray ::Filter{
+public:
+    bool operator()(const MtmParkingLot::ParkingLocation &location )
+    {
+        if (location.getParkingBlock()==MtmParkingLot::MOTORBIKE)
+            return true;
+    }
+
+};
+
+//filter motorcycle type
+class TypeFilterhandicap: public UniqueParkingArray ::Filter{
+public:
+    bool operator()(const MtmParkingLot::ParkingLocation &location )
+    {
+        if (location.getParkingBlock()==MtmParkingLot::HANDICAPPED)
+            return true;
+    }
+
+};
+
+//filter car type
+class TypeFilterCar: public UniqueParkingArray ::Filter{
+public:
+    bool operator()(const MtmParkingLot::ParkingLocation &location ) const override
+    {
+        if (location.getParkingBlock()==MtmParkingLot::CAR)
+            return true;
+
+        return false;
+    }
+
+};
+
+
+ParkingLotUtils::ParkingResult MtmParkingLot::ParkingLot::enterParking(
+        ParkingLotUtils::VehicleType vehicleType,
+        ParkingLotUtils::LicensePlate licensePlate,
+        ParkingLotUtils::Time entranceTime) {
+
+//    UniqueParkingArray filtered_array(lot_size);
+//
+    if( vehicleType == MtmParkingLot::CAR)
+    {
+        UniqueParkingArray filtered_array(parking_lot.filter(TypeFilterCar()));
+    }
+
+
+    return VEHICLE_ALREADY_PARKED;
+}
 
 MtmParkingLot::ParkingLocation::ParkingLocation(
         ParkingLotUtils::VehicleType parkingBlock, unsigned int parkingNumber,
@@ -50,14 +111,10 @@ MtmParkingLot::ParkingLocation::ParkingLocation(
         occupied(occupied),
         arrival_time(arrival_time),
         license_plate(license_plate),
-        num_of_fines(num_of_fines){
+        num_of_fines(num_of_fines)
 
-
-
-}
-
-MtmParkingLot::ParkingLocation::compare(ParkingLocation
-
-
+{
 
 }
+
+

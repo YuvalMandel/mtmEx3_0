@@ -6,7 +6,12 @@
 #include "ParkingSpot.h"
 #include "UniqueArray.h"
 
+
+
+
+
 namespace MtmParkingLot {
+
 
     using namespace ParkingLotUtils;
     using std::ostream;
@@ -25,7 +30,7 @@ namespace MtmParkingLot {
         explicit ParkingLocation(VehicleType parkingBlock = FIRST,
                 unsigned int parkingNumber = 0,
                 bool occupied = false,
-                Time arrival_time = Time(0, 0, 0),
+                Time arrival_time=(0,0,0),
                 LicensePlate license_plate = " ",
                 int num_of_fines = 0);
 
@@ -48,6 +53,7 @@ namespace MtmParkingLot {
     private:
 
         UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
+        int lot_size;
 
 
     public:
