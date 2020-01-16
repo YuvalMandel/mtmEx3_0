@@ -15,7 +15,7 @@ UniqueArray<Element, Compare>::UniqueArray(unsigned int size):
 
     for (int i = 0; i < array_size; i++){
 
-        array[i] = nullptr;
+        array[i] = NULL;
 
     }
 
@@ -43,11 +43,11 @@ UniqueArray<Element, Compare>::~UniqueArray() {
 
     for(int i = 0; i <array_size; i++)
     {
-        if(array[i] != nullptr){
+        if(array[i] != NULL){
 
             delete array[i];
 
-            //array[i] = nullptr;
+            //array[i] = NULL;
 
         }
     }
@@ -64,7 +64,7 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
 
     for(unsigned int i = 0; i < array_size; i++)
     {
-        if(array[i] != nullptr) {
+        if(array[i] != NULL) {
 
             if (c(element, *array[i])) {
 
@@ -102,7 +102,7 @@ unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
 
     for(int i=0; i<array_size; i++)
     {
-        if(array[i] == nullptr)
+        if(array[i] == NULL)
         {
             array[i] = new Element(element);
 
@@ -133,7 +133,7 @@ UniqueArray<Element, Compare>::operator[](const Element &element) const {
 
     }
 
-    return nullptr;
+    return NULL;
 }
 
 
@@ -149,7 +149,7 @@ bool UniqueArray<Element, Compare>::remove(const Element &element) {
     {
         delete array[int_temp];
 
-        array[int_temp] = nullptr;
+        array[int_temp] = NULL;
 
         num_of_element--;
 

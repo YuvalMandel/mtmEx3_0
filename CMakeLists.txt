@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(mtmEx3_0
         tests/UniqueArrayTest.cpp
         UniqueArray.h
-        UniqueArrayImp.h ParkingLot.cpp)
+        UniqueArrayImp.h)
