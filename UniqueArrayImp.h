@@ -188,12 +188,13 @@ UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
 
     UniqueArray<Element,Compare> new_array(array_size);
 
-
     for(int i=0; i<array_size; i++)
     {
         if(f(*array[i])) {
 
-            new_array.array[i] = array[i];
+            new_array.array[i] = new Element;
+
+            *new_array.array[i] = *array[i];
 
             new_array.num_of_element++;
 
