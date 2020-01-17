@@ -92,7 +92,8 @@ public:
     bool operator()(const ParkingLocation &location ) const override
     {
 
-        return (location.getParkingBlock() == filter_type)&& location.check_occupation();
+        return (location.getParkingBlock() == filter_type)&& !location
+        .check_occupation();
 
     }
 
@@ -145,10 +146,10 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
     ParkingLocation *free_location = find_open_spot
             (filtered_array, lot_size, index);
 
+    UniqueParkingArray filtered_handicapped(parking_lot.filter(TypeFilterCar(CAR)));
+
     if ((free_location == NULL) && (vehicleType == HANDICAPPED)) {
 
-        UniqueParkingArray filtered_handicapped(
-                parking_lot.filter(TypeFilterCar(CAR)));
 
         free_location = find_open_spot(
                 filtered_handicapped, lot_size, index);
@@ -156,6 +157,8 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
     if (free_location == NULL) {
 
+        ParkingLotPrinter::printVehicle(std::cout, vehicleType,
+                                        licensePlate, entranceTime);
         ParkingLotPrinter::printEntryFailureNoSpot(std::cout);
         return NO_EMPTY_SPOT;
 
@@ -166,7 +169,7 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
         parking_lot.insert(ParkingLocation(vehicleType, index,
                                            true, entranceTime, licensePlate,
-                                           0));
+                                           0,vehicleType));
 
         ParkingLotPrinter::printVehicle(std::cout, vehicleType,
                                         licensePlate, entranceTime);
