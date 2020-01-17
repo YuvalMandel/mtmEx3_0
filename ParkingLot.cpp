@@ -135,6 +135,9 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
         if (temp_location->get_license_plate() == licensePlate) {
 
+            ParkingLotPrinter::printVehicle(std::cout, vehicleType,
+                                            licensePlate, entranceTime);
+
             ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
                                                               *temp_location);//slicing
             return VEHICLE_ALREADY_PARKED;
@@ -164,10 +167,12 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
     } else {
 
+
+
         parking_lot.remove(*free_location);
 
 
-        parking_lot.insert(ParkingLocation(vehicleType, index,
+        parking_lot.insert(ParkingLocation(free_location->getParkingBlock(), index,
                                            true, entranceTime, licensePlate,
                                            0,vehicleType));
 
