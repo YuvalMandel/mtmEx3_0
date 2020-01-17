@@ -22,7 +22,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     lot_size=car_end;
 
 
-    for (int i = 0; i < motorbike_end; ++i) {
+    for (unsigned int i = 0; i < motorbike_end; ++i) {
 
         //ParkingLotUtils::Time arrival(0,0,0);
         ParkingLocation current_parking_location =
