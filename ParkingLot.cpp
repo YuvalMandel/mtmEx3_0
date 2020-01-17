@@ -1,6 +1,7 @@
 #include "ParkingLot.h"
 #include "UniqueArray.h"
 #include "ParkingLotTypes.h"
+#include "Time.h"
 
 
 MtmParkingLot::ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
@@ -52,36 +53,35 @@ typedef UniqueArray< MtmParkingLot::ParkingLocation,
 //---------------------------------------------------
 
 //filter motorcycle type
-class TypeFilterMotorcycle: public UniqueParkingArray ::Filter{
-public:
-    bool operator()(const MtmParkingLot::ParkingLocation &location )
-    {
-        if (location.getParkingBlock()==MtmParkingLot::MOTORBIKE)
-            return true;
-    }
-
-};
-
-//filter motorcycle type
-class TypeFilterhandicap: public UniqueParkingArray ::Filter{
-public:
-    bool operator()(const MtmParkingLot::ParkingLocation &location )
-    {
-        if (location.getParkingBlock()==MtmParkingLot::HANDICAPPED)
-            return true;
-    }
-
-};
+//class TypeFilterMotorcycle: public UniqueParkingArray ::Filter{
+//public:
+//    bool operator()(const MtmParkingLot::ParkingLocation &location )
+//    {
+//        if (location.getParkingBlock()==MtmParkingLot::MOTORBIKE)
+//            return true;
+//    }
+//
+//};
+//
+////filter motorcycle type
+//class TypeFilterhandicap: public UniqueParkingArray ::Filter{
+//public:
+//    bool operator()(const MtmParkingLot::ParkingLocation &location )
+//    {
+//        if (location.getParkingBlock()==MtmParkingLot::HANDICAPPED)
+//            return true;
+//    }
+//
+//};
 
 //filter car type
 class TypeFilterCar: public UniqueParkingArray ::Filter{
+
 public:
     bool operator()(const MtmParkingLot::ParkingLocation &location ) const override
     {
-        if (location.getParkingBlock()==MtmParkingLot::CAR)
-            return true;
+        return (location.getParkingBlock() == MtmParkingLot::CAR);
 
-        return false;
     }
 
 };
@@ -101,6 +101,28 @@ ParkingLotUtils::ParkingResult MtmParkingLot::ParkingLot::enterParking(
 
 
     return VEHICLE_ALREADY_PARKED;
+}
+
+ParkingLotUtils::ParkingResult MtmParkingLot::ParkingLot::exitParking(
+        ParkingLotUtils::LicensePlate licensePlate,
+        ParkingLotUtils::Time exitTime) {
+    return VEHICLE_ALREADY_PARKED;
+}
+
+ParkingLotUtils::ParkingResult MtmParkingLot::ParkingLot::getParkingSpot(
+        ParkingLotUtils::LicensePlate licensePlate,
+        ParkingLotUtils::ParkingSpot &parkingSpot) const {
+    return VEHICLE_ALREADY_PARKED;
+}
+
+void MtmParkingLot::ParkingLot::inspectParkingLot(
+        ParkingLotUtils::Time inspectionTime) {
+
+}
+
+std::ostream &MtmParkingLot::operator<<(std::ostream &os,
+                                        const MtmParkingLot::ParkingLot &parkingLot) {
+    return os;
 }
 
 MtmParkingLot::ParkingLocation::ParkingLocation(

@@ -21,6 +21,8 @@ using std::map;
 using namespace ParkingLotUtils;
 using namespace MtmParkingLot;
 
+Time test_time(0,0,0);
+
 static istream& openInputStream(int argc, char* argv[]) {
     if (argc == 2) {
         try {
@@ -142,7 +144,7 @@ int main(int argc, char* argv[]) {
     istream& inputStream = openInputStream(argc, argv);
     unsigned int parkingSizes[VehicleType::LAST-VehicleType::FIRST+1];
     getParkingSizes(inputStream, parkingSizes);
-    Time currentTime = Time();
+    Time currentTime(0,0,0);
     ParkingLot parkingLot(parkingSizes);
     processInput(inputStream, parkingLot, currentTime);
     closeInputStream(inputStream);

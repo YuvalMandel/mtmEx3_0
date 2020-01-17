@@ -30,7 +30,7 @@ namespace MtmParkingLot {
         explicit ParkingLocation(VehicleType parkingBlock = FIRST,
                 unsigned int parkingNumber = 0,
                 bool occupied = false,
-                Time arrival_time=(0,0,0),
+                Time arrival_time=Time(0,0,0),
                 LicensePlate license_plate = " ",
                 int num_of_fines = 0);
 
@@ -58,7 +58,7 @@ namespace MtmParkingLot {
 
     public:
 
-        ParkingLot(unsigned int parkingBlockSizes[]);
+        explicit ParkingLot(unsigned int parkingBlockSizes[]);
 //        ~ParkingLot();
         ParkingResult enterParking(VehicleType vehicleType, LicensePlate licensePlate, Time entranceTime);
         ParkingResult exitParking(LicensePlate licensePlate, Time exitTime);
@@ -67,7 +67,7 @@ namespace MtmParkingLot {
         friend ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
 
     };
-
+    ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
 }
 
 #endif //MTMPARKINGLOT_PARKINGLOT_H

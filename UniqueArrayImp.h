@@ -13,7 +13,7 @@ UniqueArray<Element, Compare>::UniqueArray(unsigned int size):
 
     array = new Element*[array_size];
 
-    for (int i = 0; i < array_size; i++){
+    for (unsigned int i = 0; i < array_size; i++){
 
         array[i] = NULL;
 
@@ -30,7 +30,7 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
     array=new Element*[array_size];
 
 
-    for (int i=0; i<other.array_size; i++)
+    for (unsigned int i=0; i<other.array_size; i++)
     {
         array[i] = new Element(*other.array[i]);
     }
@@ -41,7 +41,7 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
 template<class Element, class Compare>
 UniqueArray<Element, Compare>::~UniqueArray() {
 
-    for(int i = 0; i <array_size; i++)
+    for(unsigned int i = 0; i <array_size; i++)
     {
         if(array[i] != NULL){
 
@@ -100,7 +100,7 @@ unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
         throw UniqueArrayIsFullException();
     }
 
-    for(int i=0; i<array_size; i++)
+    for(int unsigned i=0; i<array_size; i++)
     {
         if(array[i] == NULL)
         {
@@ -188,7 +188,7 @@ UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
 
     UniqueArray<Element,Compare> new_array(array_size);
 
-    for(int i=0; i<array_size; i++)
+    for(int unsigned i=0; i<array_size; i++)
     {
         if(f(*array[i])) {
 
