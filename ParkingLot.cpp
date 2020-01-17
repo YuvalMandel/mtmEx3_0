@@ -253,7 +253,7 @@ ParkingResult ParkingLot::exitParking(
 
 
 
-    return VEHICLE_ALREADY_PARKED;
+    //return VEHICLE_ALREADY_PARKED;
 }
 
 ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
@@ -279,10 +279,43 @@ ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
 void ParkingLot::inspectParkingLot(
         ParkingLotUtils::Time inspectionTime) {
 
+    for (int i = 0; i <lot_size; ++i) {
+
+
+        ParkingLocation *temp_location=parking_lot.getElementByIndex(i);
+
+        Time total_parking_time=inspectionTime-
+                temp_location->get_entrance_time();
+
+        if(total_parking_time.toHours()>24)
+
+            temp_location->give_fine();
+
+    }
+
+
+
+
 }
 
-std::ostream &operator<<(std::ostream &os,
-                                        const ParkingLot &parkingLot) {
+ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
+
+    ParkingLotPrinter::printParkingLotTitle(os);
+    for (int i = 0; i < parkingLot.lot_size; ++i) {
+
+        ParkingLocation *temp_location=parkingLot.parking_lot
+                .getElementByIndex(i);
+
+        if(temp_location->check_occupation()) {
+
+            ParkingLotPrinter::printVehicle(os,
+                    temp_location->get_vehicle_type(),
+                    temp_location->get_license_plate(), temp_location->get_entrance_time());
+            ParkingLotPrinter::printParkingSpot(os,*temp_location);
+        }
+
+    }
+
     return os;
 }
 
@@ -322,6 +355,12 @@ ParkingLocation::get_entrance_time() const {
 
 bool ParkingLocation::got_fine() const {
     return received_fine;
+}
+
+void ParkingLocation::give_fine() {
+
+    this->received_fine=true;
+
 }
 
 

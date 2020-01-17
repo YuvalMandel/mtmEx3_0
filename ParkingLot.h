@@ -5,6 +5,7 @@
 #include "Time.h"
 #include "ParkingSpot.h"
 #include "UniqueArray.h"
+#include "ParkingLotPrinter.h"
 
 
 
@@ -45,6 +46,8 @@ namespace MtmParkingLot {
 
         bool got_fine() const;
 
+        void give_fine();
+
 
 
     };
@@ -68,8 +71,8 @@ namespace MtmParkingLot {
     private:
 
         UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
-        int lot_size;
 
+        int lot_size;
 
     public:
 
@@ -79,10 +82,13 @@ namespace MtmParkingLot {
         ParkingResult exitParking(LicensePlate licensePlate, Time exitTime);
         ParkingResult getParkingSpot(LicensePlate licensePlate, ParkingSpot& parkingSpot) const;
         void inspectParkingLot(Time inspectionTime);
+
         friend ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
+        }
 
     };
-    ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
+
+    //ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
 }
 
 #endif //MTMPARKINGLOT_PARKINGLOT_H
