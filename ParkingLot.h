@@ -84,7 +84,7 @@ namespace MtmParkingLot {
         void inspectParkingLot(Time inspectionTime);
 
         friend ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
-        }
+
 
     };
 
