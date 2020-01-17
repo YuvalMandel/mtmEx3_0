@@ -227,7 +227,7 @@ ParkingResult ParkingLot::exitParking(
     for (int i = 0; i < lot_size; ++i) {
 
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
-
+        LicensePlate temp_plate=temp_location->get_license_plate();
         if (temp_location->get_license_plate() == licensePlate) {
 
             VehicleType temporary_type=temp_location->getParkingBlock();
@@ -322,26 +322,7 @@ ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
     return os;
 }
 
-//ostream& operator<<(ostream &os, const ParkingLot &parkingLot) {
-//
-//    ParkingLotPrinter::printParkingLotTitle(os);
-//    for (int i = 0; i < parkingLot.lot_size; ++i) {
-//
-//        ParkingLocation *temp_location=parkingLot.parking_lot
-//                .getElementByIndex(i);
-//
-//        if(temp_location->check_occupation()) {
-//
-//            ParkingLotPrinter::printVehicle(os,
-//                    temp_location->get_vehicle_type(),
-//                    temp_location->get_license_plate(), temp_location->get_entrance_time());
-//            ParkingLotPrinter::printParkingSpot(os,*temp_location);
-//        }
-//
-//    }
-//
-//    return os;
-//}
+
 
 ParkingLocation::ParkingLocation(
         ParkingLotUtils::VehicleType parkingBlock, unsigned int parkingNumber,
@@ -364,7 +345,7 @@ bool ParkingLocation::check_occupation() const {
 
 ParkingLotUtils::LicensePlate
 ParkingLocation::get_license_plate() const {
-    return ParkingLotUtils::LicensePlate();
+    return this->license_plate;
 }
 
 ParkingLotUtils::VehicleType
