@@ -26,6 +26,8 @@ public:
     unsigned int getCount() const;
     unsigned int getSize() const;
 
+    Element* getElementByIndex (int index)const;
+
     class Filter {
     public:
         virtual bool operator() (const Element&) const = 0;

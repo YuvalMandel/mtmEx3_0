@@ -23,7 +23,8 @@ namespace MtmParkingLot {
         bool occupied;
         Time arrival_time;
         LicensePlate license_plate;
-        int num_of_fines;
+        bool received_fine;
+        VehicleType type_of_vehicle;
 
     public:
 
@@ -32,7 +33,19 @@ namespace MtmParkingLot {
                 bool occupied = false,
                 Time arrival_time=Time(0,0,0),
                 LicensePlate license_plate = " ",
-                int num_of_fines = 0);
+                bool received_fine = 0, VehicleType type_of_vehicle=CAR) ;
+
+        bool check_occupation() const;
+
+        LicensePlate get_license_plate() const;
+
+        VehicleType get_vehicle_type() const;
+
+        Time get_entrance_time() const;
+
+        bool got_fine() const;
+
+
 
     };
 
@@ -46,6 +59,8 @@ namespace MtmParkingLot {
             return (!(location_0 < location_1)) && (!(location_1 < location_0));
 
         }
+
+
 
     };
 

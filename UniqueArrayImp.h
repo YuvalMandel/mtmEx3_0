@@ -205,4 +205,9 @@ UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
     return new_array;
 }
 
+template<class Element, class Compare>
+Element *UniqueArray<Element, Compare>::getElementByIndex(int index) const {
+    return array[index];
+}
+
 #endif //MTM3_UNIQUEARRAYIMP_H
