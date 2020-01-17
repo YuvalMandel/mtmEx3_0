@@ -88,7 +88,7 @@ namespace MtmParkingLot {
 
     };
 
-    //ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
+    ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
 }
 
 #endif //MTMPARKINGLOT_PARKINGLOT_H

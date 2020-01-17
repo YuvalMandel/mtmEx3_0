@@ -300,7 +300,7 @@ void ParkingLot::inspectParkingLot(
 
 ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
 
-    ParkingLotPrinter::printParkingLotTitle(os);
+        ParkingLotPrinter::printParkingLotTitle(os);
     for (int i = 0; i < parkingLot.lot_size; ++i) {
 
         ParkingLocation *temp_location=parkingLot.parking_lot
@@ -318,6 +318,27 @@ ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
 
     return os;
 }
+
+//ostream& operator<<(ostream &os, const ParkingLot &parkingLot) {
+//
+//    ParkingLotPrinter::printParkingLotTitle(os);
+//    for (int i = 0; i < parkingLot.lot_size; ++i) {
+//
+//        ParkingLocation *temp_location=parkingLot.parking_lot
+//                .getElementByIndex(i);
+//
+//        if(temp_location->check_occupation()) {
+//
+//            ParkingLotPrinter::printVehicle(os,
+//                    temp_location->get_vehicle_type(),
+//                    temp_location->get_license_plate(), temp_location->get_entrance_time());
+//            ParkingLotPrinter::printParkingSpot(os,*temp_location);
+//        }
+//
+//    }
+//
+//    return os;
+//}
 
 ParkingLocation::ParkingLocation(
         ParkingLotUtils::VehicleType parkingBlock, unsigned int parkingNumber,
