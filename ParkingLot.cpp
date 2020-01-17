@@ -14,9 +14,9 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
               parkingBlockSizes[2])
 {
 
-    int motorbike_end = parkingBlockSizes[0];
-    int handycapped_end = parkingBlockSizes[0] + parkingBlockSizes[1];
-    int car_end = parkingBlockSizes[0] + parkingBlockSizes[1] +
+    unsigned int motorbike_end = parkingBlockSizes[0];
+    unsigned int handycapped_end = parkingBlockSizes[0] + parkingBlockSizes[1];
+    unsigned int car_end = parkingBlockSizes[0] + parkingBlockSizes[1] +
             parkingBlockSizes[2];
 
     lot_size=car_end;
@@ -32,7 +32,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 
     }
 
-    for (int i = motorbike_end; i < handycapped_end; ++i) {
+    for (unsigned int i = motorbike_end; i < handycapped_end; ++i) {
 
         ParkingLocation current_parking_location =
                 ParkingLocation(HANDICAPPED, i);
@@ -41,7 +41,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 
     }
 
-    for (int i = handycapped_end; i < car_end; ++i) {
+    for (unsigned int i = handycapped_end; i < car_end; ++i) {
 
         ParkingLocation current_parking_location =
                 ParkingLocation(CAR, i);
@@ -98,7 +98,7 @@ public:
 
 };
 
-ParkingLocation* find_open_spot(UniqueParkingArray
+ParkingLocation* find_open_spot(const UniqueParkingArray&
 filtered_array, int lot_size, int& index) {
     for (int i = 0; i < lot_size; ++i) {
 

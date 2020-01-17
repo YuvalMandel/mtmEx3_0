@@ -1,19 +1,20 @@
 cmake_minimum_required(VERSION 3.15)
-project(mtmEx3_0)
+project(ex3)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Werror")
-
-
-
-add_executable(mtmEx3_0
-        Time.cpp
+add_executable(ex3
         MtmParkingLot.cpp
-        ParkingLotPrinter.cpp
         ParkingLot.cpp
+        ParkingLot.h
+        ParkingLotPrinter.cpp
+        ParkingLotPrinter.h
+        ParkingLotTypes.h
         ParkingSpot.cpp
-
-)
+        ParkingSpot.h
+        ourTime.cpp
+        ourTime.h
+        UniqueArray.h
+        UniqueArrayImp.h)
