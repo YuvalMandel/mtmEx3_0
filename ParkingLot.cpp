@@ -287,22 +287,27 @@ ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
 void ParkingLot::inspectParkingLot(
         ParkingLotUtils::Time inspectionTime) {
 
-    for (int i = 0; i <lot_size; ++i) {
+    int fined = 0;
 
+    for (int i = 0; i < lot_size; ++i) {
 
-        ParkingLocation *temp_location=parking_lot.getElementByIndex(i);
+        ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
 
         Time total_parking_time=inspectionTime-
-                temp_location->get_entrance_time();
+                temp_location -> get_entrance_time();
 
-        if(total_parking_time.toHours()>24)
+        if(total_parking_time.toHours()>24 &&
+        temp_location->check_occupation() && !(temp_location->got_fine())) {
 
             temp_location->give_fine();
 
+            fined++;
+
+        }
+
     }
 
-
-
+    ParkingLotPrinter::printInspectionResult(std::cout, inspectionTime, fined);
 
 }
 
