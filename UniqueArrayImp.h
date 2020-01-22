@@ -1,9 +1,6 @@
-#include "UniqueArray.h"
 // Created by jonathan_pc on 1/12/2020.
 
 #ifndef MTM3_UNIQUEARRAYIMP_H
-
-#include "UniqueArray.h"
 
 //**********************************************************************
 template<class Element, class Compare>

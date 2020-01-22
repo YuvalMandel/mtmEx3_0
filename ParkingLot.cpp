@@ -103,8 +103,7 @@ ParkingLocation* find_open_spot(const UniqueParkingArray&
 filtered_array, int lot_size, int& index) {
     for (int i = 0; i < lot_size; ++i) {
 
-        ParkingLocation *free_location = filtered_array
-                .getElementByIndex(i);
+        ParkingLocation *free_location = filtered_array.getElementByIndex(i);
 
         if (free_location != NULL) {
 
@@ -377,5 +376,7 @@ void ParkingLocation::give_fine() {
     this->received_fine=true;
 
 }
+
+
 
 

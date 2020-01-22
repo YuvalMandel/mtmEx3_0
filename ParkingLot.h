@@ -59,6 +59,8 @@ namespace MtmParkingLot {
         bool operator()(const ParkingLocation& location_0,
                         const ParkingLocation& location_1) const {
 
+            //return location_0.get_license_plate()==location_1.get_license_plate();
+
             return (!(location_0 < location_1)) && (!(location_1 < location_0));
 
         }
@@ -77,7 +79,7 @@ namespace MtmParkingLot {
     public:
 
         explicit ParkingLot(unsigned int parkingBlockSizes[]);
-//        ~ParkingLot();
+        ~ParkingLot() = default;
         ParkingResult enterParking(VehicleType vehicleType, LicensePlate licensePlate, Time entranceTime);
         ParkingResult exitParking(LicensePlate licensePlate, Time exitTime);
         ParkingResult getParkingSpot(LicensePlate licensePlate, ParkingSpot& parkingSpot) const;
