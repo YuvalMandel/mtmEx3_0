@@ -7,12 +7,27 @@
 using namespace ParkingLotUtils;
 using namespace MtmParkingLot;
 
+unsigned int ParkingLot::get_shift(VehicleType vehicle_type){
 
+    if(vehicle_type == MOTORBIKE)
+        {return 0;}
+    else if(vehicle_type == HANDICAPPED)
+        {return motorbike_size;}
+    else if(vehicle_type == CAR)
+        {return motorbike_size + handicapped_size;}
+
+    return 0;
+
+}
 
 ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 : parking_lot(parkingBlockSizes[0] + parkingBlockSizes[1] +
               parkingBlockSizes[2])
 {
+    motorbike_size = parkingBlockSizes[0];
+    handicapped_size = parkingBlockSizes[1];
+    car_size = parkingBlockSizes[2];
+
 
     unsigned int motorbike_end = parkingBlockSizes[0];
     unsigned int handycapped_end = parkingBlockSizes[0] + parkingBlockSizes[1];
@@ -26,7 +41,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 
         //ParkingLotUtils::Time arrival(0,0,0);
         ParkingLocation current_parking_location =
-                ParkingLocation(MOTORBIKE, i);
+                ParkingLocation(MOTORBIKE, i - get_shift(MOTORBIKE));
 
         parking_lot.insert(current_parking_location);
 
@@ -35,7 +50,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     for (unsigned int i = motorbike_end; i < handycapped_end; ++i) {
 
         ParkingLocation current_parking_location =
-                ParkingLocation(HANDICAPPED, i);
+                ParkingLocation(HANDICAPPED, i - get_shift(HANDICAPPED));
 
         parking_lot.insert(current_parking_location);
 
@@ -44,7 +59,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     for (unsigned int i = handycapped_end; i < car_end; ++i) {
 
         ParkingLocation current_parking_location =
-                ParkingLocation(CAR, i);
+                ParkingLocation(CAR, i - get_shift((CAR)));
 
         parking_lot.insert(current_parking_location);
 
@@ -135,7 +150,8 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         if (temp_location->get_license_plate() == licensePlate) {
 
             ParkingLotPrinter::printVehicle(std::cout, vehicleType,
-                                            licensePlate, entranceTime);
+                                            licensePlate,
+                                            temp_location->get_entrance_time());
 
             ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
                                                               *temp_location);//slicing
@@ -171,7 +187,7 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         parking_lot.remove(*free_location);
 
 
-        parking_lot.insert(ParkingLocation(free_location->getParkingBlock(), index,
+        parking_lot.insert(ParkingLocation(free_location->getParkingBlock(), index - get_shift(free_location->getParkingBlock()),
                                            true, entranceTime, licensePlate,
                                            0,vehicleType));
 
@@ -190,6 +206,7 @@ int calculate_price(ParkingLocation parking_session,Time exit_time)
     int price=0;
     Time total_parking_time(exit_time-parking_session.get_entrance_time());
 
+    if(total_parking_time.toHours() == 0){ return 0;} // TODO: remove row later
 
     if (parking_session.get_vehicle_type()==MOTORBIKE)
     {
@@ -248,7 +265,7 @@ ParkingResult ParkingLot::exitParking(
 
             parking_lot.remove(*temp_location);
 
-            parking_lot.insert(ParkingLocation(temporary_type,i,
+            parking_lot.insert(ParkingLocation(temporary_type,i - get_shift(temporary_type),
                     false));
 
             return SUCCESS;

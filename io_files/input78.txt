@@ -1,0 +1,104 @@
+6
+4
+9
+PRINT
+ENTER Car XeyuU
+ENTER Motorbike kyjWUN
+ENTER Handicapped EooUb
+EXIT tVuqhfE
+EXIT ifHBs9i
+ENTER Handicapped CflC
+ENTER Motorbike eDqm5
+PRINT
+ENTER Handicapped CflC
+PASS_TIME 590
+EXIT bapHvc
+ENTER Handicapped ifHBs9i
+PASS_TIME 344
+EXIT RKTGDv
+EXIT XeyuU
+PASS_TIME 99
+ENTER Motorbike ioCcSLC
+EXIT CflC
+ENTER Car XeyuU
+ENTER Handicapped EooUb
+EXIT RKTGDv
+ENTER Motorbike ioCcSLC
+EXIT kyjWUN
+ENTER Motorbike NEnEX
+EXIT RKTGDv
+PRINT
+ENTER Motorbike ioCcSLC
+PASS_TIME 962
+EXIT ifHBs9i
+EXIT RKTGDv
+EXIT ioCcSLC
+INSPECT
+PASS_TIME 997
+ENTER Motorbike bapHvc
+EXIT RKTGDv
+ENTER Motorbike ioCcSLC
+ENTER Motorbike eDqm5
+ENTER Car 2yHPcE3
+ENTER Handicapped CflC
+ENTER Motorbike NEnEX
+PASS_TIME 919
+EXIT CflC
+EXIT tVuqhfE
+EXIT CflC
+ENTER Handicapped oZyZz
+PASS_TIME 24
+ENTER Motorbike RKTGDv
+EXIT tVuqhfE
+EXIT kyjWUN
+EXIT EooUb
+ENTER Handicapped ifHBs9i
+ENTER Handicapped CflC
+ENTER Car hIeX
+EXIT hIeX
+EXIT tVuqhfE
+ENTER Handicapped oZyZz
+ENTER Motorbike kyjWUN
+EXIT tVuqhfE
+EXIT XeyuU
+EXIT eDqm5
+EXIT eDqm5
+ENTER Car 2yHPcE3
+ENTER Motorbike eDqm5
+INSPECT
+ENTER Handicapped ifHBs9i
+ENTER Handicapped EooUb
+ENTER Motorbike NEnEX
+EXIT tVuqhfE
+ENTER Car 2yHPcE3
+ENTER Motorbike eDqm5
+ENTER Handicapped ifHBs9i
+ENTER Car XeyuU
+EXIT oZyZz
+INSPECT
+ENTER Car tVuqhfE
+EXIT hIeX
+ENTER Car XeyuU
+PASS_TIME 247
+ENTER Car tVuqhfE
+ENTER Car hIeX
+ENTER Handicapped EooUb
+ENTER Handicapped CflC
+ENTER Car CHhA
+EXIT 2yHPcE3
+PASS_TIME 319
+EXIT tVuqhfE
+EXIT NEnEX
+INSPECT
+EXIT tVuqhfE
+ENTER Car CHhA
+EXIT 2yHPcE3
+ENTER Car XeyuU
+PASS_TIME 364
+EXIT 2yHPcE3
+EXIT kyjWUN
+INSPECT
+ENTER Motorbike bapHvc
+ENTER Handicapped EooUb
+ENTER Motorbike NEnEX
+PRINT

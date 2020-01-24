@@ -75,6 +75,11 @@ namespace MtmParkingLot {
         UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
 
         int lot_size;
+        unsigned int motorbike_size;
+        unsigned int handicapped_size;
+        unsigned int car_size;
+
+        unsigned int get_shift(VehicleType vehicle_type);
 
     public:
 

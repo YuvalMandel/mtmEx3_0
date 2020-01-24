@@ -1,0 +1,104 @@
+2
+6
+10
+ENTER Handicapped aKuWa1f
+ENTER Handicapped WXwJKbi
+ENTER Handicapped wXssg
+ENTER Car ia9GB
+ENTER Motorbike GXbi
+INSPECT
+ENTER Handicapped wXssg
+ENTER Motorbike 38fK3cH
+EXIT OgSM82P
+EXIT ia9GB
+INSPECT
+EXIT OaBCM
+INSPECT
+EXIT eUxnFRP
+ENTER Handicapped WXwJKbi
+PRINT
+EXIT emabVgI
+EXIT GXbi
+ENTER Handicapped Ktbppow
+EXIT aKuWa1f
+ENTER Car ia9GB
+EXIT aKuWa1f
+ENTER Motorbike reftkp
+ENTER Handicapped Ktbppow
+ENTER Motorbike yResG
+EXIT vLLx
+EXIT eUxnFRP
+ENTER Motorbike GXbi
+PASS_TIME 812
+EXIT OgSM82P
+ENTER Handicapped emabVgI
+ENTER Handicapped Ktbppow
+INSPECT
+INSPECT
+EXIT Ktbppow
+EXIT yResG
+ENTER Motorbike reftkp
+ENTER Motorbike 7oPU
+ENTER Motorbike GXbi
+ENTER Handicapped WXwJKbi
+EXIT GXbi
+EXIT aKuWa1f
+PASS_TIME 482
+EXIT OgSM82P
+EXIT GXbi
+ENTER Motorbike vLLx
+ENTER Handicapped Ktbppow
+ENTER Handicapped wXssg
+EXIT Ktbppow
+PASS_TIME 662
+EXIT 38fK3cH
+ENTER Motorbike 7oPU
+INSPECT
+EXIT aKuWa1f
+PRINT
+EXIT Ktbppow
+ENTER Motorbike eUxnFRP
+ENTER Motorbike 7oPU
+ENTER Motorbike yResG
+ENTER Motorbike 38fK3cH
+ENTER Motorbike 7oPU
+ENTER Car OgSM82P
+ENTER Motorbike yResG
+INSPECT
+ENTER Car OgSM82P
+ENTER Motorbike OaBCM
+ENTER Motorbike OaBCM
+ENTER Motorbike 7oPU
+EXIT WXwJKbi
+EXIT ia9GB
+ENTER Motorbike reftkp
+ENTER Handicapped WXwJKbi
+EXIT ia9GB
+ENTER Motorbike OaBCM
+ENTER Car ia9GB
+ENTER Motorbike 7oPU
+EXIT WXwJKbi
+ENTER Handicapped WXwJKbi
+ENTER Motorbike reftkp
+EXIT WXwJKbi
+ENTER Motorbike yResG
+ENTER Motorbike 38fK3cH
+ENTER Motorbike GXbi
+INSPECT
+ENTER Motorbike yResG
+ENTER Handicapped Ktbppow
+EXIT 7oPU
+ENTER Car OgSM82P
+EXIT aKuWa1f
+ENTER Handicapped WXwJKbi
+ENTER Car ia9GB
+ENTER Motorbike 7oPU
+ENTER Car ia9GB
+ENTER Motorbike yResG
+EXIT aKuWa1f
+EXIT OgSM82P
+INSPECT
+EXIT OgSM82P
+PASS_TIME 443
+INSPECT
+PRINT

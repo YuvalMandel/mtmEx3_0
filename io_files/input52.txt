@@ -1,0 +1,104 @@
+5
+1
+2
+ENTER Car RDptMt
+PRINT
+ENTER Car j5HXo
+EXIT WDlu
+PRINT
+EXIT lGSK5M2
+ENTER Motorbike PyJibb
+ENTER Car RDptMt
+ENTER Motorbike lGSK5M2
+PASS_TIME 995
+EXIT j5HXo
+ENTER Handicapped hhUfpfQ
+ENTER Handicapped gcOOh
+ENTER Handicapped 1kDNatm
+EXIT gVyF
+ENTER Motorbike lGSK5M2
+ENTER Motorbike PyJibb
+ENTER Motorbike wAvPv
+EXIT gVrZp
+ENTER Motorbike PyJibb
+EXIT wAvPv
+ENTER Motorbike PyJibb
+PASS_TIME 941
+ENTER Motorbike SVIZx
+EXIT WDlu
+EXIT j5HXo
+ENTER Motorbike lGSK5M2
+EXIT gVyF
+INSPECT
+ENTER Motorbike LDal8
+ENTER Handicapped 1kDNatm
+INSPECT
+ENTER Motorbike SVIZx
+ENTER Car pg5pS6R
+ENTER Car gVyF
+PRINT
+ENTER Car pg5pS6R
+EXIT jAbYT5V
+ENTER Motorbike wAvPv
+ENTER Motorbike lGSK5M2
+PASS_TIME 285
+EXIT gcOOh
+EXIT wAvPv
+ENTER Motorbike lGSK5M2
+ENTER Handicapped gcOOh
+EXIT gVrZp
+ENTER Car j5HXo
+ENTER Car WDlu
+ENTER Motorbike wAvPv
+EXIT wAvPv
+EXIT PyJibb
+EXIT WDlu
+INSPECT
+EXIT gcOOh
+EXIT jAbYT5V
+PASS_TIME 830
+ENTER Car pg5pS6R
+EXIT LDal8
+EXIT hhUfpfQ
+ENTER Motorbike wAvPv
+PASS_TIME 42
+ENTER Motorbike jAbYT5V
+EXIT lGSK5M2
+ENTER Handicapped hhUfpfQ
+ENTER Motorbike PyJibb
+EXIT SVIZx
+PASS_TIME 748
+ENTER Motorbike PyJibb
+INSPECT
+ENTER Motorbike LDal8
+INSPECT
+PRINT
+INSPECT
+ENTER Motorbike lGSK5M2
+EXIT PyJibb
+PRINT
+EXIT SVIZx
+EXIT jAbYT5V
+INSPECT
+ENTER Handicapped 1kDNatm
+INSPECT
+ENTER Car WDlu
+PASS_TIME 273
+ENTER Handicapped gVrZp
+EXIT SVIZx
+ENTER Car WDlu
+ENTER Motorbike PyJibb
+EXIT wAvPv
+PASS_TIME 483
+EXIT PyJibb
+ENTER Motorbike jAbYT5V
+ENTER Motorbike PyJibb
+ENTER Car pg5pS6R
+ENTER Handicapped hhUfpfQ
+INSPECT
+ENTER Handicapped gcOOh
+ENTER Motorbike SVIZx
+ENTER Motorbike jAbYT5V
+ENTER Motorbike PyJibb
+ENTER Car j5HXo
+PRINT

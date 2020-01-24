@@ -1,0 +1,104 @@
+8
+7
+2
+EXIT OAJaF2
+ENTER Handicapped GPtQiiG
+EXIT DVYEyq
+EXIT 4NeJO
+EXIT GPtQiiG
+ENTER Handicapped DVYEyq
+INSPECT
+EXIT 5tflvN3
+EXIT D4aE
+ENTER Car oBTxp
+ENTER Handicapped 4NeJO
+ENTER Car D4aE
+ENTER Handicapped z67KI
+ENTER Car 5c6gfi
+ENTER Car etXj
+EXIT OAJaF2
+ENTER Car etXj
+ENTER Handicapped DVYEyq
+INSPECT
+ENTER Car etXj
+ENTER Handicapped z67KI
+INSPECT
+PASS_TIME 120
+ENTER Car Ca5yrBe
+EXIT DbSWx0b
+EXIT OAJaF2
+ENTER Car oBTxp
+ENTER Handicapped uneys2G
+ENTER Handicapped 4NeJO
+PASS_TIME 648
+EXIT uneys2G
+ENTER Handicapped 4NeJO
+ENTER Motorbike OAJaF2
+ENTER Handicapped DVYEyq
+ENTER Car oBTxp
+ENTER Car W2lPD
+EXIT OAJaF2
+ENTER Handicapped uneys2G
+ENTER Car oBTxp
+ENTER Car oBTxp
+PRINT
+ENTER Car W2lPD
+ENTER Car Ca5yrBe
+EXIT oBTxp
+ENTER Car W2lPD
+PASS_TIME 561
+ENTER Car 5c6gfi
+ENTER Car D4aE
+EXIT oBTxp
+EXIT W2lPD
+ENTER Handicapped z67KI
+EXIT 5tflvN3
+ENTER Handicapped DbSWx0b
+ENTER Handicapped 4NeJO
+EXIT DbSWx0b
+ENTER Handicapped uneys2G
+ENTER Car 5c6gfi
+EXIT z67KI
+ENTER Car EHcmacY
+EXIT 5tflvN3
+ENTER Handicapped z67KI
+ENTER Car EHcmacY
+ENTER Handicapped DbSWx0b
+EXIT OAJaF2
+ENTER Handicapped z67KI
+INSPECT
+ENTER Handicapped DbSWx0b
+ENTER Car oBTxp
+INSPECT
+ENTER Car D4aE
+EXIT D4aE
+EXIT DbSWx0b
+ENTER Handicapped GPtQiiG
+ENTER Car etXj
+ENTER Car W2lPD
+EXIT D4aE
+ENTER Handicapped GPtQiiG
+PASS_TIME 104
+ENTER Handicapped 4NeJO
+ENTER Car W2lPD
+ENTER Car W2lPD
+PASS_TIME 983
+ENTER Car 5c6gfi
+ENTER Handicapped uneys2G
+EXIT EHcmacY
+EXIT z67KI
+PASS_TIME 736
+ENTER Handicapped 4NeJO
+ENTER Car oBTxp
+ENTER Motorbike OAJaF2
+ENTER Handicapped DVYEyq
+PASS_TIME 681
+ENTER Handicapped z67KI
+ENTER Car etXj
+EXIT Ca5yrBe
+ENTER Handicapped DVYEyq
+ENTER Motorbike OAJaF2
+ENTER Motorbike 5tflvN3
+PASS_TIME 115
+ENTER Car W2lPD
+PRINT
