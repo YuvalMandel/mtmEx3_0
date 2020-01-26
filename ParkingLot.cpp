@@ -105,9 +105,11 @@ static bool check_if_vehicle_is_parked(UniqueParkingArray parking_lot,
 
             ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
                                                               *temp_location);
-            return VEHICLE_ALREADY_PARKED;
+            return true;
         }
     }
+
+    return false;
 }
 ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         ParkingLotUtils::VehicleType vehicleType,

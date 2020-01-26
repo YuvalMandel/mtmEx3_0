@@ -8,19 +8,19 @@ COMP_FLAG= -std=c++11 -Wall -Werror -pedantic-errors -DNDEBUG
 $(EXEC) :$(OBJS)
 	$(CC) $(DEBUG_FLAG) $(OBJS) -o $@ $(SRVR_FLAGS)
 	
-MtmParkingLot.o: MtmParkingLot.cpp ParkingLotTypes.h Time.h ParkingLotPrinter.h ParkingLot.h
+MtmParkingLot.o: MtmParkingLot.cpp ParkingLotTypes.h Time.h ParkingLotPrinter.h ParkingLot.h ParkingSpot.h UniqueArray.h UniqueArrayImp.h
 	$(CC) -c $(DEBUG_FLAG) $(COMP_FLAG) $*.cpp
 
 Time.o: Time.cpp Time.h
 	$(CC) -c $(DEBUG_FLAG) $(COMP_FLAG) $*.cpp
 	
-ParkingLot.o: ParkingLot.cpp ParkingLot.h UniqueArray.h UniqueArrayImp.h ParkingLotTypes.h Time.h ParkingLotPrinter.h	
+ParkingLot.o: ParkingLot.cpp ParkingLot.h UniqueArray.h UniqueArrayImp.h ParkingLotTypes.h Time.h ParkingLotPrinter.h ParkingSpot.h
 	$(CC) -c $(DEBUG_FLAG) $(COMP_FLAG) $*.cpp
 	
-ParkingLotPrinter.o: ParkingLotPrinter.cpp ParkingLotPrinter.h
+ParkingLotPrinter.o: ParkingLotPrinter.cpp ParkingLotPrinter.h Time.h ParkingSpot.h ParkingLotTypes.h
 	$(CC) -c $(DEBUG_FLAG) $(COMP_FLAG) $*.cpp
 
-ParkingSpot.o: ParkingSpot.cpp ParkingSpot.h
+ParkingSpot.o: ParkingSpot.cpp ParkingSpot.h ParkingLotTypes.h
 	$(CC) -c $(DEBUG_FLAG) $(COMP_FLAG) $*.cpp
 
 clean:
