@@ -6,6 +6,9 @@
 using namespace ParkingLotUtils;
 using namespace MtmParkingLot;
 
+#define NUM_PARK_TYPES 3
+#define VEHICLE_TYPES {MOTORBIKE, HANDICAPPED, CAR};
+
 unsigned int ParkingLot::get_shift(VehicleType vehicle_type){
 
     if(vehicle_type == MOTORBIKE)
@@ -27,40 +30,24 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     handicapped_size = parkingBlockSizes[1];
     car_size = parkingBlockSizes[2];
 
+    unsigned int type_lengths[NUM_PARK_TYPES] =
+            {motorbike_size, handicapped_size, car_size};
 
-    unsigned int motorbike_end = parkingBlockSizes[0];
-    unsigned int handycapped_end = parkingBlockSizes[0] + parkingBlockSizes[1];
-    unsigned int car_end = parkingBlockSizes[0] + parkingBlockSizes[1] +
-            parkingBlockSizes[2];
+    lot_size = int(motorbike_size + handicapped_size + car_size);
 
-    lot_size = int(car_end);
+    VehicleType vehicle_types[3] = VEHICLE_TYPES;
 
+    for (int j = 0; j < NUM_PARK_TYPES; ++j) {
 
-    for (unsigned int i = 0; i < motorbike_end; ++i) {
+        for (unsigned int i = 0; i < type_lengths[j]; ++i) {
 
-        //ParkingLotUtils::Time arrival(0,0,0);
-        ParkingLocation current_parking_location =
-                ParkingLocation(MOTORBIKE, i - get_shift(MOTORBIKE));
+            ParkingLocation current_parking_location =
+                    ParkingLocation(vehicle_types[j], i);
+                            //get_shift(vehicle_types[j]) + i); //TODO choose
 
-        parking_lot.insert(current_parking_location);
+            parking_lot.insert(current_parking_location);
 
-    }
-
-    for (unsigned int i = motorbike_end; i < handycapped_end; ++i) {
-
-        ParkingLocation current_parking_location =
-                ParkingLocation(HANDICAPPED, i - get_shift(HANDICAPPED));
-
-        parking_lot.insert(current_parking_location);
-
-    }
-
-    for (unsigned int i = handycapped_end; i < car_end; ++i) {
-
-        ParkingLocation current_parking_location =
-                ParkingLocation(CAR, i - get_shift((CAR)));
-
-        parking_lot.insert(current_parking_location);
+        }
 
     }
 
@@ -68,47 +55,20 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 typedef UniqueArray< ParkingLocation,
         ParkingLocationCompare> UniqueParkingArray;
 
-//filters
-//---------------------------------------------------
-
-//filter motorcycle type
-//class TypeFilterMotorcycle: public UniqueParkingArray ::Filter{
-//public:
-//    bool operator()(const ParkingLocation &location )
-//    {
-//        if (location.getParkingBlock()==MOTORBIKE)
-//            return true;
-//    }
-//
-//};
-//
-////filter motorcycle type
-//class TypeFilterhandicap: public UniqueParkingArray ::Filter{
-//public:
-//    bool operator()(const ParkingLocation &location )
-//    {
-//        if (location.getParkingBlock()==HANDICAPPED)
-//            return true;
-//    }
-//
-//};
-
 //filter car type
-class TypeFilterCar: public UniqueParkingArray ::Filter{
+class TypeFilterVehicleType: public UniqueParkingArray ::Filter{
 
     VehicleType filter_type;
 
 public:
-    explicit TypeFilterCar(VehicleType type_to_filter){
-        filter_type=type_to_filter;
+    explicit TypeFilterVehicleType(VehicleType type_to_filter){
+        filter_type = type_to_filter;
     }
 
     bool operator()(const ParkingLocation &location ) const override
     {
-
         return (location.getParkingBlock() == filter_type)&& !location
         .check_occupation();
-
     }
 
 };
@@ -139,7 +99,7 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         ParkingLotUtils::Time entranceTime) {
 
 
-    UniqueParkingArray filtered_array(parking_lot.filter(TypeFilterCar
+    UniqueParkingArray filtered_array(parking_lot.filter(TypeFilterVehicleType
                                                                  (vehicleType)));
 
     for (int i = 0; i < lot_size; ++i) {
@@ -163,7 +123,7 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
     ParkingLocation *free_location = find_open_spot
             (filtered_array, lot_size, index);
 
-    UniqueParkingArray filtered_handicapped(parking_lot.filter(TypeFilterCar(CAR)));
+    UniqueParkingArray filtered_handicapped(parking_lot.filter(TypeFilterVehicleType(CAR)));
 
     if ((free_location == nullptr) && (vehicleType == HANDICAPPED)) {
 
