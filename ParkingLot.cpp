@@ -9,6 +9,12 @@ using namespace MtmParkingLot;
 #define NUM_PARK_TYPES 3
 #define VEHICLE_TYPES {MOTORBIKE, HANDICAPPED, CAR};
 
+/**
+ * parkingLot is comprised of one single array containing all parking spots of
+ * all types. getShift function returns the first index of a specific
+ * vehicleType. Now, a parkinglocation's index can be calculated relatively
+ * to the begging of its own vehicleType, and printed accordingly.
+ */
 unsigned int ParkingLot::getShift(VehicleType vehicle_type){
 
     if(vehicle_type == MOTORBIKE)
@@ -22,6 +28,11 @@ unsigned int ParkingLot::getShift(VehicleType vehicle_type){
 
 }
 
+/**
+ * ParkingLot constructor
+ *
+ * receives array, containing number of motorbike, handicap, and car spots.
+ */
 ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 : parking_lot(parkingBlockSizes[0] + parkingBlockSizes[1] +
               parkingBlockSizes[2])
@@ -35,7 +46,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 
     lot_size = int(motorbike_size + handicapped_size + car_size);
 
-    VehicleType vehicle_types[3] = VEHICLE_TYPES;
+    VehicleType vehicle_types[NUM_PARK_TYPES] = VEHICLE_TYPES;
 
     for (int j = 0; j < NUM_PARK_TYPES; ++j) {
 
@@ -52,10 +63,21 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
     }
 
 }
+
+/**
+ *new type: "UniqueParkingArray" is the ADT used to store information
+ * regarding parking lot status.
+ */
 typedef UniqueArray< ParkingLocation,
         ParkingLocationCompare> UniqueParkingArray;
 
-//filter car type
+/**
+ *
+ *new class: "TypeFilterVehicleType"
+ *
+ * contains variables of this class have the operator() that filters parking
+ * locations
+ */
 class TypeFilterVehicleType: public UniqueParkingArray ::Filter{
 
     VehicleType filter_type;
@@ -73,6 +95,10 @@ public:
 
 };
 
+/**
+ * returns whether the ParkingLocation received as a param, is equal to
+ * this.filerType.
+ */
 ParkingLocation* findOpenSpot(const UniqueParkingArray&
 filtered_array, int lot_size, int& index) {
     for (int i = 0; i < lot_size; ++i) {
@@ -85,12 +111,17 @@ filtered_array, int lot_size, int& index) {
 
             return free_location;
 
-
         }
 
     }
     return nullptr;
 }
+
+/**
+ * checks the parking lot for a vehicle with a specific license plate. if the
+ * vehicle is found returns true. else returns false.
+ *
+ */
 static bool checkIfVehicleIsParked(UniqueParkingArray parking_lot,
         LicensePlate licensePlate, int lot_size, VehicleType vehicleType){
 
@@ -113,6 +144,15 @@ static bool checkIfVehicleIsParked(UniqueParkingArray parking_lot,
     return false;
 }
 
+/**
+ * checks the parking lot for open spaces (findOpenSpot). if an open spot is
+ * found, in the correct VehicleType, the vehicle is added to the parkingLot.
+ *
+ * if there are no empty spot we return NO_OPEN_SPACES
+ *
+ * if the vehicle is already parked return VEHICLE_ALREADY_PARKED
+ *
+ */
 ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         ParkingLotUtils::VehicleType vehicleType,
         ParkingLotUtils::LicensePlate licensePlate,
@@ -170,6 +210,11 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
 }
 
+/**
+ * returns price to be payed when a car exits the parking lot acoriding to
+ * VehicleType, parking time and fines given.
+ *
+ */
 unsigned int calculatePrice(ParkingLocation parking_session, Time exit_time)
 {
     unsigned int price = 0;
@@ -217,6 +262,12 @@ unsigned int calculatePrice(ParkingLocation parking_session, Time exit_time)
     return price;
 }
 
+/**
+ * checks parkingLot for a vehicle with a specific license plate. if said
+ * vehicle is found, prints exit message including the total cost of the
+ * parking. then removes the vehicle from the parkingLot.
+ *
+ */
 ParkingResult ParkingLot::exitParking(
         ParkingLotUtils::LicensePlate licensePlate,
         ParkingLotUtils::Time exitTime) {
@@ -256,6 +307,10 @@ ParkingResult ParkingLot::exitParking(
 
 }
 
+/**
+ * This function gives a parking spot, based on the licensePlate the user has
+ * entered.
+ */
 ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
         ParkingLotUtils::LicensePlate licensePlate,
         ParkingLotUtils::ParkingSpot &parkingSpot) const {
@@ -263,9 +318,14 @@ ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
     for(int i = 0; i < lot_size; i++)
     {
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
-        if(licensePlate == temp_location->getLicensePlate())
+        if(licensePlate == temp_location -> getLicensePlate())
         {
-            parkingSpot = *temp_location;
+
+            ParkingSpot temp_parking_spot = ParkingSpot(
+                    temp_location -> getParkingBlock(),
+                    temp_location -> getParkingNumber());
+
+            parkingSpot = temp_parking_spot;
 
             return(SUCCESS);
         }
@@ -274,6 +334,10 @@ ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
     return VEHICLE_NOT_FOUND;
 }
 
+/**
+ * This function goes through each parking location and gives a fine,
+ * according the inspection rules.
+ */
 void ParkingLot::inspectParkingLot(
         ParkingLotUtils::Time inspectionTime) {
 
@@ -287,7 +351,8 @@ void ParkingLot::inspectParkingLot(
                 temp_location->getEntranceTime();
 
         if(total_parking_time.toHours() > 24 &&
-                temp_location->checkOccupation() && !(temp_location->gotFine())){
+                temp_location->checkOccupation() &&
+                !(temp_location->gotFine())){
 
             temp_location->giveFine();
 
@@ -301,7 +366,7 @@ void ParkingLot::inspectParkingLot(
 
 }
 
-ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
+ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot){
 
         ParkingLotPrinter::printParkingLotTitle(os);
     for (int i = 0; i < parkingLot.lot_size; ++i) {
@@ -324,6 +389,9 @@ ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
     return os;
 }
 
+/**
+ * This is the parking location class constructor.
+ */
 ParkingLocation::ParkingLocation(
         ParkingLotUtils::VehicleType parkingBlock, unsigned int parkingNumber,
         bool occupied, ParkingLotUtils::Time arrival_time, LicensePlate license_plate,
@@ -337,29 +405,47 @@ ParkingLocation::ParkingLocation(
 
 }
 
+/**
+ * This function returns true if the parking location is occupied.
+ */
 bool ParkingLocation::checkOccupation() const {
     return this -> occupied;
 }
 
+/**
+ * This function returns the vehicle license plate.
+ */
 ParkingLotUtils::LicensePlate
 ParkingLocation::getLicensePlate() const {
     return this -> license_plate;
 }
 
+/**
+ * This function returns the vehicle type (NOT the type of parking).
+ */
 ParkingLotUtils::VehicleType
 ParkingLocation::getVehicleType() const {
     return type_of_vehicle;
 }
 
+/**
+ * This function returns the vehicle entrance time.
+ */
 ParkingLotUtils::Time
 ParkingLocation::getEntranceTime() const {
     return arrival_time;
 }
 
+/**
+ * This function returns whther or not the vehicle in the location got fined
+ */
 bool ParkingLocation::gotFine() const {
     return received_fine;
 }
 
+/** This function gives a a fine to the ParkingLocation, changing it's
+ * received_fine param to true.
+ */
 void ParkingLocation::giveFine() {
     this -> received_fine = true;
 }
