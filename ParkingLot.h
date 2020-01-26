@@ -7,12 +7,7 @@
 #include "UniqueArray.h"
 #include "ParkingLotPrinter.h"
 
-
-
-
-
 namespace MtmParkingLot {
-
 
     using namespace ParkingLotUtils;
     using std::ostream;
@@ -48,8 +43,6 @@ namespace MtmParkingLot {
 
         void give_fine();
 
-
-
     };
 
     class ParkingLocationCompare{
@@ -63,8 +56,6 @@ namespace MtmParkingLot {
 
         }
 
-
-
     };
 
     class ParkingLot {
@@ -73,11 +64,16 @@ namespace MtmParkingLot {
         UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
 
         int lot_size;
+        unsigned int motorbike_size;
+        unsigned int handicapped_size;
+        unsigned int car_size;
+
+        unsigned int get_shift(VehicleType vehicle_type);
 
     public:
 
         explicit ParkingLot(unsigned int parkingBlockSizes[]);
-//        ~ParkingLot();
+        ~ParkingLot() = default;
         ParkingResult enterParking(VehicleType vehicleType, LicensePlate licensePlate, Time entranceTime);
         ParkingResult exitParking(LicensePlate licensePlate, Time exitTime);
         ParkingResult getParkingSpot(LicensePlate licensePlate, ParkingSpot& parkingSpot) const;
@@ -85,10 +81,10 @@ namespace MtmParkingLot {
 
         friend ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
 
-
     };
 
     ostream& operator<<(ostream& os, const ParkingLot& parkingLot);
+
 }
 
 #endif //MTMPARKINGLOT_PARKINGLOT_H

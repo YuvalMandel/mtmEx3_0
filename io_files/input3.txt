@@ -1,23 +1,104 @@
-2
 1
-5
-ENTER Motorbike 1
-PASS_TIME 1
-ENTER Motorbike 1
-ENTER Motorbike 2
-ENTER Motorbike 3
-ENTER Handicapped 10
-ENTER Handicapped 11
-ENTER Car AB14D
-PASS_TIME 361
-EXIT 11
-EXIT ABCD
-EXIT AB14D
+9
+1
+ENTER Handicapped yYoi
+ENTER Handicapped 9XGaG
+EXIT QhkI
+ENTER Car QhkI
+EXIT 8xDtY
+ENTER Motorbike Cx87MI
+EXIT vVW9hvl
+INSPECT
+ENTER Motorbike Wk3I
+EXIT Wk3I
+EXIT 9XGaG
+EXIT LrdG
+ENTER Car LrdG
+ENTER Motorbike Vd9y
+ENTER Handicapped 9XGaG
+ENTER Handicapped hZ74V3
+ENTER Motorbike Cx87MI
+ENTER Motorbike vVW9hvl
+EXIT yYoi
+ENTER Car QhkI
+EXIT RZR6xs
+EXIT 8xDtY
+ENTER Motorbike Wk3I
+EXIT yYoi
+ENTER Handicapped yYoi
+EXIT vVW9hvl
+ENTER Handicapped 2vOwj
+ENTER Car eHwuFq
+ENTER Handicapped 6CA8
+EXIT Vd9y
+ENTER Handicapped 2vOwj
+ENTER Handicapped yYoi
+ENTER Handicapped yYoi
+ENTER Handicapped yYoi
+EXIT eHwuFq
+EXIT 6CA8
+EXIT yYoi
+INSPECT
+EXIT yYoi
+INSPECT
+ENTER Car LrdG
+ENTER Car LrdG
+ENTER Motorbike Cx87MI
+ENTER Motorbike Vd9y
+ENTER Motorbike Vd9y
+ENTER Handicapped 9XGaG
+INSPECT
+ENTER Handicapped 9XGaG
+PASS_TIME 325
+EXIT yYoi
+EXIT vVW9hvl
+ENTER Motorbike Cx87MI
+EXIT RZR6xs
+ENTER Motorbike HeHk1hS
+ENTER Car LrdG
+ENTER Handicapped RZR6xs
+EXIT LrdG
+EXIT 2vOwj
+ENTER Motorbike vVW9hvl
+ENTER Motorbike Wk3I
+EXIT 9XGaG
+ENTER Handicapped 8xDtY
+PASS_TIME 24
+ENTER Motorbike vVW9hvl
+ENTER Handicapped RZR6xs
+ENTER Car QhkI
+EXIT 9XGaG
+EXIT RZR6xs
+INSPECT
+EXIT hZ74V3
+ENTER Handicapped RZR6xs
+ENTER Handicapped 9XGaG
+ENTER Handicapped yYoi
+INSPECT
+ENTER Handicapped 9XGaG
+ENTER Handicapped 9XGaG
+ENTER Car QhkI
+ENTER Handicapped 2vOwj
+ENTER Car eHwuFq
+ENTER Handicapped yYoi
+ENTER Motorbike vVW9hvl
+EXIT Cx87MI
+EXIT 8xDtY
+ENTER Handicapped 8xDtY
+ENTER Car QhkI
+EXIT 2vOwj
+ENTER Handicapped RZR6xs
+ENTER Handicapped 2vOwj
+INSPECT
+INSPECT
+ENTER Handicapped RZR6xs
+EXIT HeHk1hS
+EXIT 6CA8
+ENTER Car eHwuFq
+ENTER Motorbike Vd9y
+EXIT QhkI
+PASS_TIME 947
+INSPECT
 PRINT
-PASS_TIME 1140
-INSPECT
-PASS_TIME 30
-INSPECT
-EXIT 1
-EXIT 2
+PASS_TIME 989
 PRINT
