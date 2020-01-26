@@ -101,10 +101,11 @@ static bool check_if_vehicle_is_parked(UniqueParkingArray parking_lot,
         if (temp_location->getLicensePlate() == licensePlate) {
 
             ParkingLotPrinter::printVehicle(std::cout, vehicleType,
-                                            licensePlate, temp_location->getEntranceTime());
+                    licensePlate, temp_location->getEntranceTime());
 
             ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
-                                                              *temp_location);
+                    *temp_location);
+
             return true;
         }
     }
@@ -119,10 +120,9 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
     UniqueParkingArray filtered_array(
             parking_lot.filter(TypeFilterVehicleType(vehicleType)));
 
-    if(check_if_vehicle_is_parked(parking_lot, licensePlate,lot_size,vehicleType))
-    {
-        return VEHICLE_ALREADY_PARKED;
-    }
+    if(check_if_vehicle_is_parked(parking_lot, licensePlate,
+            lot_size, vehicleType)) return VEHICLE_ALREADY_PARKED;
+
     int index = 0;
 
     ParkingLocation *free_location = find_open_spot
