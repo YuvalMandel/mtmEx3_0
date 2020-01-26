@@ -6,12 +6,14 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <map>
 #include <limits>
 
 using std::istream;
 using std::ifstream;
 using std::string;
+using std::istringstream;
 using std::cout;
 using std::cin;
 using std::cerr;
@@ -21,12 +23,10 @@ using std::map;
 using namespace ParkingLotUtils;
 using namespace MtmParkingLot;
 
-Time test_time(0,0,0);
-
 static istream& openInputStream(int argc, char* argv[]) {
     if (argc == 2) {
         try {
-            return *(new ifstream(argv[1]));
+            return *(new istringstream(argv[1]));
         }
         catch (const ifstream::failure& e) {
             cerr << "Error reading input file!";
@@ -40,7 +40,6 @@ static void closeInputStream(istream& is) {
     if (&is == &cin) {
         return;
     }
-    static_cast<ifstream&>(is).close();
     delete &is;
 }
 
@@ -106,7 +105,7 @@ static void processInput(istream& inputStream, ParkingLot& parkingLot, Time& cur
                                               {"INSPECT", processInspectCmd}}; 
     cout << "Enter commands:" << endl;
     string cmd;
-    while (inputStream >> cmd) {
+    while (inputStream >> cmd && cmd!="STOP") {
         try {
             CmdFunction cmdFunc = cmdMap.at(cmd);
             cmdFunc(inputStream, parkingLot, currentTime);
@@ -117,6 +116,7 @@ static void processInput(istream& inputStream, ParkingLot& parkingLot, Time& cur
             handleInputError(inputStream, "unrecognized command!");
         }
     }
+    inputStream.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
 static void getParkingSizes(istream& inputStream, unsigned int parkingSizes[]) {
@@ -128,6 +128,7 @@ static void getParkingSizes(istream& inputStream, unsigned int parkingSizes[]) {
         inputStream >> inputNum;
         if (inputStream.fail() || inputNum < 0) {
             handleInputError(inputStream, "Invalid size!");
+            break;
         }
         else {
             parkingSizes[i] = inputNum;
@@ -142,11 +143,17 @@ int main(int argc, char* argv[]) {
         return 1;
     }
     istream& inputStream = openInputStream(argc, argv);
-    unsigned int parkingSizes[VehicleType::LAST-VehicleType::FIRST+1];
-    getParkingSizes(inputStream, parkingSizes);
-    Time currentTime(0,0,0);
-    ParkingLot parkingLot(parkingSizes);
-    processInput(inputStream, parkingLot, currentTime);
+    while (!inputStream.eof() && !(inputStream.peek()==-1)) {
+        if (inputStream.eof() || inputStream.peek()==-1){
+            cerr << inputStream.eof() << endl;
+            break;
+        }
+        unsigned int parkingSizes[VehicleType::LAST - VehicleType::FIRST + 1];
+        getParkingSizes(inputStream, parkingSizes);
+        Time currentTime = Time();
+        ParkingLot parkingLot(parkingSizes);
+        processInput(inputStream, parkingLot, currentTime);
+    }
     closeInputStream(inputStream);
     return 0;
 }

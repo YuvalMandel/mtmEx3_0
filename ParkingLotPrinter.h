@@ -1,7 +1,7 @@
 #ifndef MTMPARKINGLOT_PARKINGLOTPRINTER_H
 #define MTMPARKINGLOT_PARKINGLOTPRINTER_H
 
-#include "ourTime.h"
+#include "Time.h"
 #include "ParkingSpot.h"
 #include "ParkingLotTypes.h"
 #include <iostream>
