@@ -31,17 +31,12 @@ namespace MtmParkingLot {
                 LicensePlate license_plate = " ",
                 bool received_fine = 0, VehicleType type_of_vehicle=CAR) ;
 
-        bool check_occupation() const;
-
-        LicensePlate get_license_plate() const;
-
-        VehicleType get_vehicle_type() const;
-
-        Time get_entrance_time() const;
-
-        bool got_fine() const;
-
-        void give_fine();
+        bool checkOccupation() const;
+        LicensePlate getLicensePlate() const;
+        VehicleType getVehicleType() const;
+        Time getEntranceTime() const;
+        bool gotFine() const;
+        void giveFine();
 
     };
 
@@ -68,7 +63,7 @@ namespace MtmParkingLot {
         unsigned int handicapped_size;
         unsigned int car_size;
 
-        unsigned int get_shift(VehicleType vehicle_type);
+        unsigned int getShift(VehicleType vehicle_type);
 
     public:
 

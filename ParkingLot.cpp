@@ -9,7 +9,7 @@ using namespace MtmParkingLot;
 #define NUM_PARK_TYPES 3
 #define VEHICLE_TYPES {MOTORBIKE, HANDICAPPED, CAR};
 
-unsigned int ParkingLot::get_shift(VehicleType vehicle_type){
+unsigned int ParkingLot::getShift(VehicleType vehicle_type){
 
     if(vehicle_type == MOTORBIKE)
         {return 0;}
@@ -43,7 +43,7 @@ ParkingLot::ParkingLot(unsigned int *parkingBlockSizes)
 
             ParkingLocation current_parking_location =
                     ParkingLocation(vehicle_types[j], i);
-                            //get_shift(vehicle_types[j]) + i); //TODO choose
+                            //getShift(vehicle_types[j]) + i); //TODO choose
 
             parking_lot.insert(current_parking_location);
 
@@ -68,7 +68,7 @@ public:
     bool operator()(const ParkingLocation &location ) const override
     {
         return (location.getParkingBlock() == filter_type)&& !location
-        .check_occupation();
+                .checkOccupation();
     }
 
 };
@@ -104,10 +104,10 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
 
-        if (temp_location->get_license_plate() == licensePlate) {
+        if (temp_location->getLicensePlate() == licensePlate) {
 
             ParkingLotPrinter::printVehicle(std::cout, vehicleType,
-                    licensePlate, temp_location -> get_entrance_time());
+                    licensePlate, temp_location->getEntranceTime());
 
             ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
                                                               *temp_location);
@@ -140,7 +140,8 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
         parking_lot.remove(*free_location);
 
-        parking_lot.insert(ParkingLocation(free_location->getParkingBlock(), index - get_shift(free_location->getParkingBlock()),
+        parking_lot.insert(ParkingLocation(free_location->getParkingBlock(), index -
+                                                   getShift(free_location->getParkingBlock()),
                                            true, entranceTime, licensePlate,
                                            false,vehicleType));
 
@@ -159,11 +160,11 @@ unsigned int calculate_price(ParkingLocation parking_session,Time exit_time)
 {
     unsigned int price = 0;
 
-    Time total_parking_time(exit_time-parking_session.get_entrance_time());
+    Time total_parking_time(exit_time- parking_session.getEntranceTime());
 
     if(total_parking_time.toHours() == 0) return 0; // TODO: remove row later
 
-    if (parking_session.get_vehicle_type() == MOTORBIKE){
+    if (parking_session.getVehicleType() == MOTORBIKE){
 
         price = 10 + (total_parking_time.toHours() - 1)*5;
 
@@ -175,7 +176,7 @@ unsigned int calculate_price(ParkingLocation parking_session,Time exit_time)
 
     }
 
-    if (parking_session.get_vehicle_type() == CAR){
+    if (parking_session.getVehicleType() == CAR){
 
         price = 20 + (total_parking_time.toHours() - 1)*10;
 
@@ -187,13 +188,13 @@ unsigned int calculate_price(ParkingLocation parking_session,Time exit_time)
 
     }
 
-    if (parking_session.get_vehicle_type() == HANDICAPPED) {
+    if (parking_session.getVehicleType() == HANDICAPPED) {
 
         price = 15;
 
     }
 
-    if (parking_session.got_fine()){
+    if (parking_session.gotFine()){
 
         price = price + 250;
 
@@ -209,15 +210,15 @@ ParkingResult ParkingLot::exitParking(
     for (int i = 0; i < lot_size; ++i) {
 
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
-        LicensePlate temp_plate=temp_location->get_license_plate();
+        LicensePlate temp_plate= temp_location->getLicensePlate();
 
-        if (temp_location->get_license_plate() == licensePlate) {
+        if (temp_location->getLicensePlate() == licensePlate) {
 
             VehicleType temporary_type = temp_location -> getParkingBlock();
 
             ParkingLotPrinter::printVehicle(std::cout,
-                    temp_location -> get_vehicle_type(), licensePlate,
-                    temp_location -> get_entrance_time());
+                                            temp_location->getVehicleType(), licensePlate,
+                                            temp_location->getEntranceTime());
 
             unsigned int price = 0;
 
@@ -229,7 +230,7 @@ ParkingResult ParkingLot::exitParking(
             parking_lot.remove(*temp_location);
 
             parking_lot.insert(ParkingLocation(temporary_type,
-                    i - get_shift(temporary_type),false));
+                                               i - getShift(temporary_type), false));
 
             return SUCCESS;
         }
@@ -248,7 +249,7 @@ ParkingLotUtils::ParkingResult ParkingLot::getParkingSpot(
     for(int i = 0; i < lot_size; i++)
     {
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
-        if(licensePlate == temp_location -> get_license_plate())
+        if(licensePlate == temp_location->getLicensePlate())
         {
             parkingSpot=*temp_location;
 
@@ -269,12 +270,12 @@ void ParkingLot::inspectParkingLot(
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
 
         Time total_parking_time = inspectionTime -
-                temp_location -> get_entrance_time();
+                temp_location->getEntranceTime();
 
         if(total_parking_time.toHours() > 24 &&
-        temp_location -> check_occupation() && !(temp_location->got_fine())){
+                temp_location->checkOccupation() && !(temp_location->gotFine())){
 
-            temp_location -> give_fine();
+            temp_location->giveFine();
 
             fined++;
 
@@ -294,12 +295,12 @@ ostream &MtmParkingLot::operator<<(ostream &os, const ParkingLot &parkingLot) {
         ParkingLocation *temp_location = parkingLot.parking_lot
                 .getElementByIndex(i);
 
-        if(temp_location -> check_occupation()) {
+        if(temp_location->checkOccupation()) {
 
             ParkingLotPrinter::printVehicle(os,
-                    temp_location->get_vehicle_type(),
-                    temp_location->get_license_plate(),
-                    temp_location->get_entrance_time());
+                                            temp_location->getVehicleType(),
+                                            temp_location->getLicensePlate(),
+                                            temp_location->getEntranceTime());
 
             ParkingLotPrinter::printParkingSpot(os,*temp_location);
 
@@ -322,30 +323,30 @@ ParkingLocation::ParkingLocation(
 
 }
 
-bool ParkingLocation::check_occupation() const {
+bool ParkingLocation::checkOccupation() const {
     return this -> occupied;
 }
 
 ParkingLotUtils::LicensePlate
-ParkingLocation::get_license_plate() const {
+ParkingLocation::getLicensePlate() const {
     return this -> license_plate;
 }
 
 ParkingLotUtils::VehicleType
-ParkingLocation::get_vehicle_type() const {
+ParkingLocation::getVehicleType() const {
     return type_of_vehicle;
 }
 
 ParkingLotUtils::Time
-ParkingLocation::get_entrance_time() const {
+ParkingLocation::getEntranceTime() const {
     return arrival_time;
 }
 
-bool ParkingLocation::got_fine() const {
+bool ParkingLocation::gotFine() const {
     return received_fine;
 }
 
-void ParkingLocation::give_fine() {
+void ParkingLocation::giveFine() {
     this -> received_fine = true;
 }
 
