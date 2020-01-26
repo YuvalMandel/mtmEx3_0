@@ -12,6 +12,12 @@ namespace MtmParkingLot {
     using namespace ParkingLotUtils;
     using std::ostream;
 
+    /*
+     * This class inherits from ParkingSpot, and adds vehicle properties and
+     * some of our own, so we will know all the parking vehicle properties
+     * like license plate and type, and if the location is occupied. This is
+     * the base class we will use for the parking lot.
+     */
     class ParkingLocation: public ParkingSpot{
 
     private:
@@ -40,6 +46,9 @@ namespace MtmParkingLot {
 
     };
 
+    /*
+     * This class has a compare function for Parking locations.
+     */
     class ParkingLocationCompare{
 
     public:
@@ -58,9 +67,16 @@ namespace MtmParkingLot {
 
         UniqueArray<ParkingLocation, ParkingLocationCompare> parking_lot;
 
+        // This is the total num of parking spots.
         int lot_size;
+
+        // This is the total num of parking spots of type motorbike.
         unsigned int motorbike_size;
+
+        // This is the total num of parking spots of type handicapped.
         unsigned int handicapped_size;
+
+        // This is the total num of parking spots of type car.
         unsigned int car_size;
 
         unsigned int getShift(VehicleType vehicle_type);
