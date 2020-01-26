@@ -73,7 +73,7 @@ public:
 
 };
 
-ParkingLocation* find_open_spot(const UniqueParkingArray&
+ParkingLocation* findOpenSpot(const UniqueParkingArray&
 filtered_array, int lot_size, int& index) {
     for (int i = 0; i < lot_size; ++i) {
 
@@ -91,14 +91,14 @@ filtered_array, int lot_size, int& index) {
     }
     return nullptr;
 }
-static bool check_if_vehicle_is_parked(UniqueParkingArray parking_lot,
-        LicensePlate licensePlate, int lot_size, VehicleType vehicleType)
-{
+static bool checkIfVehicleIsParked(UniqueParkingArray parking_lot,
+        LicensePlate licensePlate, int lot_size, VehicleType vehicleType){
+
     for (int i = 0; i < lot_size; ++i) {
 
         ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
 
-        if (temp_location->getLicensePlate() == licensePlate) {
+        if (temp_location -> getLicensePlate() == licensePlate) {
 
             ParkingLotPrinter::printVehicle(std::cout, vehicleType,
                     licensePlate, temp_location->getEntranceTime());
@@ -112,6 +112,7 @@ static bool check_if_vehicle_is_parked(UniqueParkingArray parking_lot,
 
     return false;
 }
+
 ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         ParkingLotUtils::VehicleType vehicleType,
         ParkingLotUtils::LicensePlate licensePlate,
@@ -120,12 +121,12 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
     UniqueParkingArray filtered_array(
             parking_lot.filter(TypeFilterVehicleType(vehicleType)));
 
-    if(check_if_vehicle_is_parked(parking_lot, licensePlate,
-            lot_size, vehicleType)) return VEHICLE_ALREADY_PARKED;
+    if(checkIfVehicleIsParked(parking_lot, licensePlate,
+                              lot_size, vehicleType)) return VEHICLE_ALREADY_PARKED;
 
     int index = 0;
 
-    ParkingLocation *free_location = find_open_spot
+    ParkingLocation *free_location = findOpenSpot
             (filtered_array, lot_size, index);
 
     UniqueParkingArray filtered_handicapped(
@@ -133,8 +134,8 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
 
     if ((free_location == nullptr) && (vehicleType == HANDICAPPED)) {
 
-        free_location = find_open_spot(filtered_handicapped, lot_size,
-                index);
+        free_location = findOpenSpot(filtered_handicapped, lot_size,
+                                     index);
     }
 
     if (free_location == nullptr) {
