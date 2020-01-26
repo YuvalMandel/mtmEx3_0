@@ -1,5 +1,4 @@
 // Created by jonathan_pc on 1/12/2020.
-
 #ifndef MTM3_UNIQUEARRAYIMP_H
 
 //**********************************************************************
@@ -12,7 +11,7 @@ UniqueArray<Element, Compare>::UniqueArray(unsigned int size):
 
     for (unsigned int i = 0; i < array_size; i++){
 
-        array[i] = NULL;
+        array[i] = nullptr;
 
     }
 
@@ -25,7 +24,6 @@ UniqueArray<Element, Compare>::UniqueArray(const UniqueArray &other) {
     array_size = other.array_size;
     num_of_element = other.num_of_element;
     array=new Element*[array_size];
-
 
     for (unsigned int i=0; i<other.array_size; i++)
     {
@@ -40,11 +38,9 @@ UniqueArray<Element, Compare>::~UniqueArray() {
 
     for(unsigned int i = 0; i <array_size; i++)
     {
-        if(array[i] != NULL){
+        if(array[i] != nullptr){
 
             delete array[i];
-
-            //array[i] = NULL;
 
         }
     }
@@ -61,7 +57,7 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
 
     for(unsigned int i = 0; i < array_size; i++)
     {
-        if(array[i] != NULL) {
+        if(array[i] != nullptr){
 
             if (c(element, *array[i])) {
 
@@ -74,32 +70,25 @@ bool UniqueArray<Element, Compare>::getIndex(const Element &element,
         }
 
     }
+
     return false;
+    
 }
 
 //**********************************************************************
-
 
 template<class Element, class Compare>
 unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
 
     unsigned int int_temp;
+    
+    if(getIndex(element,int_temp)) return int_temp;
 
-    //auto int_ptr = new unsigned int;
+    if (array_size == num_of_element) throw UniqueArrayIsFullException();
 
-    if(getIndex(element,int_temp))
+    for(int unsigned i = 0; i < array_size; i++)
     {
-        return int_temp;
-    }
-
-    if (array_size == num_of_element)
-    {
-        throw UniqueArrayIsFullException();
-    }
-
-    for(int unsigned i=0; i<array_size; i++)
-    {
-        if(array[i] == NULL)
+        if(array[i] == nullptr)
         {
             array[i] = new Element(element);
 
@@ -109,12 +98,9 @@ unsigned int UniqueArray<Element, Compare>::insert(const Element &element) {
         }
     }
 
-    //delete int_ptr;
-
     return 0;
 
 }
-
 
 //**********************************************************************
 template<class Element, class Compare>
@@ -125,16 +111,11 @@ UniqueArray<Element, Compare>::operator[](const Element &element) const {
 
     if(getIndex(element, temp_int))
     {
-
         return array[temp_int];
-
     }
 
-    return NULL;
+    return nullptr;
 }
-
-
-
 
 //**********************************************************************
 template<class Element, class Compare>
@@ -146,7 +127,7 @@ bool UniqueArray<Element, Compare>::remove(const Element &element) {
     {
         delete array[int_temp];
 
-        array[int_temp] = NULL;
+        array[int_temp] = nullptr;
 
         num_of_element--;
 
@@ -157,14 +138,12 @@ bool UniqueArray<Element, Compare>::remove(const Element &element) {
 
 }
 
-
-
 //**********************************************************************
-
 template<class Element, class Compare>
 unsigned int UniqueArray<Element, Compare>::getCount() const {
 
     return num_of_element;
+
 }
 
 
@@ -173,6 +152,7 @@ template<class Element, class Compare>
 unsigned int UniqueArray<Element, Compare>::getSize() const {
 
     return array_size;
+
 }
 
 
@@ -200,11 +180,15 @@ UniqueArray<Element, Compare> UniqueArray<Element, Compare>::filter
     }
 
     return new_array;
+
 }
 
+//**********************************************************************
 template<class Element, class Compare>
 Element *UniqueArray<Element, Compare>::getElementByIndex(int index) const {
+
     return array[index];
+
 }
 
 #endif //MTM3_UNIQUEARRAYIMP_H
