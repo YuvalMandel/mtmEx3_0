@@ -91,7 +91,24 @@ filtered_array, int lot_size, int& index) {
     }
     return nullptr;
 }
+static bool check_if_vehicle_is_parked(UniqueParkingArray parking_lot,
+        LicensePlate licensePlate, int lot_size, VehicleType vehicleType)
+{
+    for (int i = 0; i < lot_size; ++i) {
 
+        ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
+
+        if (temp_location->getLicensePlate() == licensePlate) {
+
+            ParkingLotPrinter::printVehicle(std::cout, vehicleType,
+                                            licensePlate, temp_location->getEntranceTime());
+
+            ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
+                                                              *temp_location);
+            return VEHICLE_ALREADY_PARKED;
+        }
+    }
+}
 ParkingLotUtils::ParkingResult ParkingLot::enterParking(
         ParkingLotUtils::VehicleType vehicleType,
         ParkingLotUtils::LicensePlate licensePlate,
@@ -100,21 +117,10 @@ ParkingLotUtils::ParkingResult ParkingLot::enterParking(
     UniqueParkingArray filtered_array(
             parking_lot.filter(TypeFilterVehicleType(vehicleType)));
 
-    for (int i = 0; i < lot_size; ++i) {
-
-        ParkingLocation *temp_location = parking_lot.getElementByIndex(i);
-
-        if (temp_location->getLicensePlate() == licensePlate) {
-
-            ParkingLotPrinter::printVehicle(std::cout, vehicleType,
-                    licensePlate, temp_location->getEntranceTime());
-
-            ParkingLotPrinter::printEntryFailureAlreadyParked(std::cout,
-                                                              *temp_location);
-            return VEHICLE_ALREADY_PARKED;
-        }
+    if(check_if_vehicle_is_parked(parking_lot, licensePlate,lot_size,vehicleType))
+    {
+        return VEHICLE_ALREADY_PARKED;
     }
-
     int index = 0;
 
     ParkingLocation *free_location = find_open_spot
