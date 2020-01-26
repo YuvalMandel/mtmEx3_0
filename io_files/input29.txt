@@ -1,0 +1,104 @@
+7
+6
+3
+EXIT 0na0C
+ENTER Handicapped 61Sx
+PASS_TIME 291
+ENTER Motorbike 209K
+EXIT rDFqV
+ENTER Motorbike 0na0C
+PASS_TIME 258
+ENTER Car 3tqQ
+EXIT 0na0C
+ENTER Handicapped OwWh
+ENTER Motorbike ioASztQ
+EXIT 0na0C
+ENTER Car qJsk
+ENTER Motorbike 0na0C
+ENTER Motorbike 209K
+EXIT OwWh
+ENTER Motorbike 0na0C
+ENTER Handicapped js9Ool
+INSPECT
+ENTER Handicapped dargEP
+ENTER Motorbike 1Baq8
+EXIT rs0vb7I
+PASS_TIME 536
+EXIT 0na0C
+EXIT 209K
+EXIT 209K
+ENTER Car 3tqQ
+INSPECT
+EXIT 1Baq8
+ENTER Handicapped dargEP
+ENTER Handicapped js9Ool
+EXIT zIf26BD
+EXIT qJsk
+PASS_TIME 976
+INSPECT
+ENTER Handicapped OwWh
+ENTER Handicapped rs0vb7I
+ENTER Car 3tqQ
+INSPECT
+ENTER Motorbike 1Baq8
+EXIT js9Ool
+EXIT GZZDFzM
+INSPECT
+PASS_TIME 682
+PASS_TIME 250
+ENTER Handicapped dargEP
+ENTER Motorbike ioASztQ
+PASS_TIME 739
+PASS_TIME 163
+ENTER Motorbike 209K
+ENTER Car 3tqQ
+EXIT rDFqV
+EXIT ioASztQ
+EXIT OwWh
+ENTER Handicapped 61Sx
+EXIT OwWh
+EXIT js9Ool
+EXIT GZZDFzM
+EXIT ioASztQ
+EXIT GZZDFzM
+EXIT 209K
+ENTER Handicapped js9Ool
+ENTER Motorbike 209K
+ENTER Handicapped 61Sx
+EXIT GZZDFzM
+INSPECT
+EXIT 0na0C
+ENTER Handicapped 61Sx
+INSPECT
+PASS_TIME 680
+ENTER Handicapped v7vNWGo
+ENTER Handicapped v7vNWGo
+ENTER Car 3tqQ
+ENTER Handicapped OwWh
+INSPECT
+EXIT js9Ool
+ENTER Handicapped 61Sx
+PASS_TIME 368
+PASS_TIME 613
+ENTER Handicapped v7vNWGo
+ENTER Motorbike ioASztQ
+EXIT dargEP
+EXIT zIf26BD
+EXIT OwWh
+EXIT qJsk
+EXIT GZZDFzM
+ENTER Handicapped GZZDFzM
+ENTER Handicapped v7vNWGo
+INSPECT
+ENTER Motorbike ioASztQ
+ENTER Handicapped v7vNWGo
+ENTER Handicapped 61Sx
+EXIT v7vNWGo
+ENTER Motorbike 1Baq8
+EXIT 209K
+ENTER Motorbike 1Baq8
+ENTER Motorbike 1Baq8
+PASS_TIME 868
+ENTER Handicapped 61Sx
+EXIT qJsk
+PRINT

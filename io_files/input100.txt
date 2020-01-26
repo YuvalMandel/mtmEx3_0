@@ -1,0 +1,104 @@
+5
+1
+5
+PASS_TIME 151
+ENTER Car baOYcxQ
+ENTER Car bMkgG
+ENTER Handicapped PJi9P
+PASS_TIME 161
+ENTER Car BzRxe
+ENTER Car bMkgG
+EXIT c6WG3U
+PASS_TIME 790
+EXIT BzRxe
+ENTER Handicapped hTwV
+EXIT BzRxe
+ENTER Handicapped tnwn
+ENTER Motorbike T95b0
+ENTER Motorbike T95b0
+EXIT baOYcxQ
+ENTER Handicapped TTCgS
+ENTER Car bMkgG
+ENTER Handicapped mPG5O5
+EXIT baOYcxQ
+ENTER Handicapped TTCgS
+ENTER Motorbike c9M6JUe
+EXIT kw05q
+INSPECT
+PASS_TIME 384
+EXIT bMkgG
+ENTER Motorbike T95b0
+EXIT krPc8tc
+ENTER Handicapped mPG5O5
+EXIT tnwn
+INSPECT
+ENTER Car BzRxe
+ENTER Handicapped kT0F
+ENTER Handicapped PJi9P
+ENTER Car baOYcxQ
+EXIT BzRxe
+ENTER Car BzRxe
+EXIT keSYA
+ENTER Handicapped tnwn
+ENTER Car baOYcxQ
+ENTER Motorbike c9M6JUe
+INSPECT
+ENTER Handicapped kT0F
+EXIT TTCgS
+ENTER Car baOYcxQ
+EXIT krPc8tc
+PRINT
+INSPECT
+EXIT c9M6JUe
+ENTER Car kw05q
+ENTER Motorbike c6WG3U
+ENTER Handicapped TTCgS
+ENTER Car BzRxe
+ENTER Car keSYA
+EXIT baOYcxQ
+PASS_TIME 757
+EXIT tnwn
+PRINT
+EXIT PJi9P
+EXIT krPc8tc
+PRINT
+ENTER Handicapped TTCgS
+ENTER Motorbike c9M6JUe
+ENTER Motorbike T95b0
+ENTER Car keSYA
+EXIT keSYA
+PASS_TIME 213
+ENTER Handicapped hTwV
+ENTER Handicapped kT0F
+ENTER Car keSYA
+ENTER Handicapped mPG5O5
+ENTER Car kw05q
+INSPECT
+ENTER Motorbike krPc8tc
+EXIT mPG5O5
+ENTER Motorbike T95b0
+ENTER Handicapped kT0F
+ENTER Handicapped mPG5O5
+INSPECT
+EXIT mPG5O5
+ENTER Car BzRxe
+ENTER Car BzRxe
+ENTER Handicapped PJi9P
+EXIT BzRxe
+ENTER Handicapped mPG5O5
+ENTER Handicapped PJi9P
+ENTER Motorbike T95b0
+EXIT mPG5O5
+ENTER Motorbike T95b0
+EXIT c6WG3U
+INSPECT
+EXIT T95b0
+INSPECT
+ENTER Motorbike c6WG3U
+EXIT keSYA
+ENTER Handicapped hTwV
+PASS_TIME 645
+INSPECT
+EXIT T95b0
+ENTER Motorbike krPc8tc
+PRINT

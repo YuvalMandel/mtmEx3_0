@@ -1,0 +1,126 @@
+Enter parking size for Motorbike:
+Enter parking size for Handicapped:
+Enter parking size for Car:
+Enter commands:
+Error: Vehicle with License Plate: 2w9LR not found!
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00 has successfully entered the Parking Lot, parked in: Motorbike-0
+Parking lot was inspected on: Day 0, 00:00. Total of 0 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: p0H0, arrived on: Day 0, 00:00 has successfully entered the Parking Lot, parked in: Handicapped-0
+Vehicle Type: Motorbike, License Plate: m1vG, arrived on: Day 0, 00:00 failed entering Parking Lot : no available parking spot!
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Vehicle Type: Motorbike, License Plate: tSjAQ, arrived on: Day 0, 00:00 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Motorbike, License Plate: tSjAQ, arrived on: Day 0, 00:00 failed entering Parking Lot : no available parking spot!
+Current time: Day 0, 16:16
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Car-0
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Car-0
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Handicapped-1
+Vehicle Type: Motorbike, License Plate: Vg4q, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Handicapped, License Plate: p0H0, arrived on: Day 0, 00:00, parked in: Handicapped-0 has exited Parking Lot on: Day 0, 16:16, Total price to pay: 15
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16, parked in: Car-0 has exited Parking Lot on: Day 0, 16:16, Total price to pay: 0
+Error: Vehicle with License Plate: 9mN9 not found!
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Car-0
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Car-0
+Error: Vehicle with License Plate: Vg4q not found!
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Car-1
+Error: Vehicle with License Plate: 8w3y not found!
+Parking lot was inspected on: Day 0, 16:16. Total of 0 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Handicapped-1
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Vehicle Type: Motorbike, License Plate: Vg4q, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Motorbike, License Plate: tSjAQ, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Parking lot was inspected on: Day 0, 16:16. Total of 0 vehicles were fined.
+Error: Vehicle with License Plate: rbFNan not found!
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 0, 16:16, parked in: Handicapped-1 has exited Parking Lot on: Day 0, 16:16, Total price to pay: 0
+Error: Vehicle with License Plate: Y4gsA6 not found!
+Error: Vehicle with License Plate: p0H0 not found!
+Vehicle Type: Motorbike, License Plate: tYDj, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Motorbike, License Plate: tSjAQ, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Error: Vehicle with License Plate: Vg4q not found!
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Error: Vehicle with License Plate: 9mN9 not found!
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 0, 16:16 has successfully entered the Parking Lot, parked in: Handicapped-1
+=============
+MtmParkingLot
+=============
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00, parked in: Motorbike-0
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 0, 16:16, parked in: Handicapped-1
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16, parked in: Car-0
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 0, 16:16, parked in: Car-1
+Parking lot was inspected on: Day 0, 16:16. Total of 0 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 0, 16:16, parked in: Handicapped-1 has exited Parking Lot on: Day 0, 16:16, Total price to pay: 0
+Vehicle Type: Motorbike, License Plate: Vg4q, arrived on: Day 0, 16:16 failed entering Parking Lot : no available parking spot!
+Current time: Day 1, 03:24
+Vehicle Type: Motorbike, License Plate: 8w3y, arrived on: Day 1, 03:24 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Motorbike, License Plate: Vg4q, arrived on: Day 1, 03:24 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 1, 03:24 has successfully entered the Parking Lot, parked in: Handicapped-1
+Parking lot was inspected on: Day 1, 03:24. Total of 1 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Car-1
+Vehicle Type: Motorbike, License Plate: Vg4q, arrived on: Day 1, 03:24 failed entering Parking Lot : no available parking spot!
+Error: Vehicle with License Plate: MWnzVHQ not found!
+Error: Vehicle with License Plate: tSjAQ not found!
+Vehicle Type: Motorbike, License Plate: m1vG, arrived on: Day 1, 03:24 failed entering Parking Lot : no available parking spot!
+Parking lot was inspected on: Day 1, 03:24. Total of 0 vehicles were fined.
+Vehicle Type: Motorbike, License Plate: tYDj, arrived on: Day 1, 03:24 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Handicapped, License Plate: 9mN9, arrived on: Day 1, 03:24 has successfully entered the Parking Lot, parked in: Car-2
+Vehicle Type: Handicapped, License Plate: 9mN9, arrived on: Day 1, 03:24 is already in the Parking Lot, parked in: Car-2
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00 is already in the Parking Lot, parked in: Motorbike-0
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00 is already in the Parking Lot, parked in: Motorbike-0
+Error: Vehicle with License Plate: tYDj not found!
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 1, 03:24, parked in: Handicapped-1 has exited Parking Lot on: Day 1, 03:24, Total price to pay: 0
+Current time: Day 1, 14:49
+Vehicle Type: Motorbike, License Plate: 8w3y, arrived on: Day 1, 14:49 failed entering Parking Lot : no available parking spot!
+Parking lot was inspected on: Day 1, 14:49. Total of 0 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: MyOwkn6, arrived on: Day 1, 14:49 has successfully entered the Parking Lot, parked in: Handicapped-1
+Vehicle Type: Handicapped, License Plate: 9mN9, arrived on: Day 1, 03:24, parked in: Car-2 has exited Parking Lot on: Day 1, 14:49, Total price to pay: 15
+Vehicle Type: Motorbike, License Plate: 8w3y, arrived on: Day 1, 14:49 failed entering Parking Lot : no available parking spot!
+Error: Vehicle with License Plate: Y4gsA6 not found!
+Parking lot was inspected on: Day 1, 14:49. Total of 0 vehicles were fined.
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00 is already in the Parking Lot, parked in: Motorbike-0
+Vehicle Type: Car, License Plate: 2GoBO, arrived on: Day 0, 16:16, parked in: Car-0 has exited Parking Lot on: Day 1, 14:49, Total price to pay: 70
+Vehicle Type: Motorbike, License Plate: m1vG, arrived on: Day 1, 14:49 failed entering Parking Lot : no available parking spot!
+Parking lot was inspected on: Day 1, 14:49. Total of 0 vehicles were fined.
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 0, 16:16, parked in: Car-1 has exited Parking Lot on: Day 1, 14:49, Total price to pay: 15
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00 is already in the Parking Lot, parked in: Motorbike-0
+Current time: Day 2, 07:18
+Error: Vehicle with License Plate: 9mN9 not found!
+Current time: Day 2, 10:09
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 2, 10:09 has successfully entered the Parking Lot, parked in: Car-0
+Error: Vehicle with License Plate: 2w9LR not found!
+=============
+MtmParkingLot
+=============
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00, parked in: Motorbike-0
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: MyOwkn6, arrived on: Day 1, 14:49, parked in: Handicapped-1
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 2, 10:09, parked in: Car-0
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: MyOwkn6, arrived on: Day 1, 14:49 is already in the Parking Lot, parked in: Handicapped-1
+Vehicle Type: Motorbike, License Plate: tYDj, arrived on: Day 2, 10:09 failed entering Parking Lot : no available parking spot!
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Handicapped-0
+Error: Vehicle with License Plate: 9mN9 not found!
+Parking lot was inspected on: Day 2, 10:09. Total of 1 vehicles were fined.
+Error: Vehicle with License Plate: Vg4q not found!
+Vehicle Type: Car, License Plate: MWnzVHQ, arrived on: Day 2, 10:09 has successfully entered the Parking Lot, parked in: Car-1
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 2, 10:09 is already in the Parking Lot, parked in: Car-0
+Error: Vehicle with License Plate: 2w9LR not found!
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 2, 10:09 has successfully entered the Parking Lot, parked in: Car-2
+Vehicle Type: Car, License Plate: MWnzVHQ, arrived on: Day 2, 10:09, parked in: Car-1 has exited Parking Lot on: Day 2, 10:09, Total price to pay: 0
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16 is already in the Parking Lot, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 2, 10:09 is already in the Parking Lot, parked in: Car-2
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 2, 10:09 has successfully entered the Parking Lot, parked in: Car-1
+Parking lot was inspected on: Day 2, 10:09. Total of 0 vehicles were fined.
+Error: Vehicle with License Plate: 8w3y not found!
+Vehicle Type: Motorbike, License Plate: m1vG, arrived on: Day 2, 10:09 failed entering Parking Lot : no available parking spot!
+=============
+MtmParkingLot
+=============
+Vehicle Type: Motorbike, License Plate: gYaJa5b, arrived on: Day 0, 00:00, parked in: Motorbike-0
+Vehicle Type: Handicapped, License Plate: P9zAmjm, arrived on: Day 0, 16:16, parked in: Handicapped-0
+Vehicle Type: Handicapped, License Plate: MyOwkn6, arrived on: Day 1, 14:49, parked in: Handicapped-1
+Vehicle Type: Handicapped, License Plate: rbFNan, arrived on: Day 2, 10:09, parked in: Car-0
+Vehicle Type: Handicapped, License Plate: 2w9LR, arrived on: Day 2, 10:09, parked in: Car-1
+Vehicle Type: Handicapped, License Plate: Y4gsA6, arrived on: Day 2, 10:09, parked in: Car-2

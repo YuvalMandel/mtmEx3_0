@@ -1,0 +1,104 @@
+10
+2
+6
+ENTER Handicapped 8Gnaws
+EXIT 0hXt
+ENTER Car ZmXO
+ENTER Car 0hXt
+ENTER Handicapped 7zkx
+ENTER Motorbike EFsR
+INSPECT
+ENTER Motorbike jwWw
+ENTER Car 0hXt
+EXIT WR3emmD
+ENTER Car ZmXO
+ENTER Car SycVGR
+EXIT 38POadg
+ENTER Handicapped 38POadg
+EXIT GZk92n
+PRINT
+PASS_TIME 252
+ENTER Handicapped 8Gnaws
+ENTER Motorbike EFsR
+ENTER Handicapped 7zkx
+EXIT EFsR
+EXIT 0hXt
+INSPECT
+EXIT 8Gnaws
+EXIT EFsR
+ENTER Handicapped 7zkx
+ENTER Handicapped WR3emmD
+EXIT 52u85
+ENTER Handicapped cr2wHA
+ENTER Handicapped WR3emmD
+EXIT 0hXt
+EXIT ZmXO
+ENTER Motorbike EFsR
+EXIT 2FDh
+ENTER Car ZmXO
+EXIT WR3emmD
+ENTER Car ZmXO
+EXIT 0hXt
+EXIT cr2wHA
+EXIT WR3emmD
+ENTER Car SycVGR
+INSPECT
+ENTER Car ZmXO
+EXIT GZk92n
+ENTER Motorbike jwWw
+ENTER Handicapped GZk92n
+EXIT ZmXO
+EXIT qPR5
+EXIT jwWw
+PRINT
+EXIT ZmXO
+ENTER Handicapped cr2wHA
+ENTER Motorbike 2FDh
+PRINT
+ENTER Handicapped WR3emmD
+EXIT 2FDh
+ENTER Handicapped 38POadg
+ENTER Car ZmXO
+ENTER Handicapped GZk92n
+ENTER Handicapped cr2wHA
+ENTER Motorbike EFsR
+ENTER Motorbike EFsR
+ENTER Handicapped 8Gnaws
+PASS_TIME 939
+ENTER Motorbike jwWw
+ENTER Car 0hXt
+EXIT EFsR
+ENTER Car ZmXO
+EXIT jwWw
+ENTER Handicapped cr2wHA
+INSPECT
+EXIT qPR5
+ENTER Motorbike 2FDh
+ENTER Car ZmXO
+EXIT 2FDh
+ENTER Car qPR5
+EXIT SycVGR
+ENTER Car SycVGR
+ENTER Car ZmXO
+ENTER Motorbike 2FDh
+ENTER Handicapped GZk92n
+EXIT 2FDh
+ENTER Motorbike 2FDh
+EXIT 2FDh
+INSPECT
+EXIT WR3emmD
+EXIT SycVGR
+ENTER Handicapped 7zkx
+PASS_TIME 751
+ENTER Car SycVGR
+PRINT
+PASS_TIME 881
+ENTER Car qPR5
+ENTER Motorbike EFsR
+EXIT EFsR
+ENTER Motorbike jwWw
+EXIT 2FDh
+ENTER Car 0hXt
+EXIT SycVGR
+ENTER Handicapped 7zkx
+PRINT

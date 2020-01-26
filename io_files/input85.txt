@@ -1,0 +1,104 @@
+10
+5
+2
+ENTER Car RszL
+INSPECT
+EXIT loto1
+EXIT IdidPJh
+ENTER Handicapped VANnQ2h
+EXIT MVFt
+ENTER Motorbike JpCvl
+ENTER Car 0mKWfb
+ENTER Car RszL
+EXIT OYWYo8
+EXIT cWiez3
+ENTER Motorbike OYWYo8
+EXIT w16f
+ENTER Handicapped cWiez3
+INSPECT
+ENTER Motorbike loto1
+ENTER Motorbike JpCvl
+ENTER Motorbike JpCvl
+EXIT 0mKWfb
+INSPECT
+ENTER Car i9Gzy7
+EXIT peMoE0o
+EXIT JpCvl
+ENTER Handicapped VANnQ2h
+EXIT 0mKWfb
+ENTER Motorbike IdidPJh
+EXIT loto1
+EXIT cWiez3
+EXIT VANnQ2h
+ENTER Motorbike JpCvl
+ENTER Motorbike loto1
+EXIT cWiez3
+ENTER Handicapped MVFt
+EXIT loto1
+ENTER Motorbike OYWYo8
+ENTER Handicapped VANnQ2h
+EXIT RszL
+ENTER Motorbike loto1
+ENTER Car RszL
+EXIT VANnQ2h
+ENTER Handicapped VANnQ2h
+EXIT RszL
+ENTER Motorbike OYWYo8
+EXIT loto1
+INSPECT
+ENTER Handicapped cWiez3
+ENTER Car 0mKWfb
+ENTER Car i9Gzy7
+ENTER Car RszL
+ENTER Motorbike y1bDU
+EXIT IdidPJh
+EXIT OYWYo8
+EXIT w16f
+EXIT 74ck6
+EXIT loto1
+EXIT 74ck6
+EXIT JpCvl
+ENTER Motorbike loto1
+EXIT y1bDU
+INSPECT
+ENTER Motorbike y1bDU
+ENTER Handicapped MVFt
+ENTER Handicapped peMoE0o
+ENTER Motorbike y1bDU
+PASS_TIME 932
+EXIT 74ck6
+ENTER Motorbike IdidPJh
+INSPECT
+ENTER Car 0mKWfb
+EXIT w16f
+INSPECT
+ENTER Motorbike w16f
+EXIT JpCvl
+ENTER Car RszL
+PRINT
+EXIT VANnQ2h
+EXIT loto1
+EXIT IdidPJh
+ENTER Handicapped peMoE0o
+EXIT y1bDU
+ENTER Motorbike w16f
+ENTER Motorbike JpCvl
+ENTER Car 74ck6
+ENTER Handicapped VANnQ2h
+EXIT IdidPJh
+PRINT
+ENTER Motorbike JpCvl
+EXIT MVFt
+EXIT RszL
+ENTER Motorbike w16f
+ENTER Handicapped cWiez3
+EXIT w16f
+ENTER Handicapped VANnQ2h
+PRINT
+ENTER Handicapped VANnQ2h
+EXIT VANnQ2h
+EXIT i9Gzy7
+INSPECT
+ENTER Handicapped peMoE0o
+EXIT IdidPJh
+PRINT

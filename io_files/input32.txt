@@ -1,0 +1,104 @@
+9
+8
+1
+ENTER Motorbike nWNAm
+ENTER Car MyAUQl
+EXIT ggyI
+ENTER Car yYEsNE
+ENTER Motorbike nWNAm
+ENTER Motorbike zehn
+ENTER Motorbike 7ASNc
+EXIT QIbAN
+PASS_TIME 980
+ENTER Motorbike 7ASNc
+ENTER Car e8gBX
+ENTER Motorbike nWNAm
+ENTER Car ggyI
+ENTER Motorbike zehn
+ENTER Handicapped QIbAN
+ENTER Motorbike zehn
+ENTER Motorbike QvpEc04
+PASS_TIME 266
+ENTER Motorbike zehn
+INSPECT
+ENTER Motorbike REVUsn
+ENTER Car MyAUQl
+EXIT Knfyl
+ENTER Motorbike 8uvZ
+PASS_TIME 634
+ENTER Motorbike 8uvZ
+EXIT MyAUQl
+EXIT QvpEc04
+EXIT nWNAm
+EXIT REVUsn
+ENTER Handicapped 4MjSmaG
+INSPECT
+EXIT REVUsn
+PASS_TIME 642
+ENTER Car MyAUQl
+ENTER Handicapped QIbAN
+ENTER Car 1ZcEqg
+EXIT zehn
+EXIT MyAUQl
+ENTER Car ggyI
+ENTER Car e8gBX
+EXIT 4MjSmaG
+ENTER Handicapped 4MjSmaG
+EXIT nWNAm
+PASS_TIME 795
+ENTER Handicapped 4MjSmaG
+EXIT 1ZcEqg
+EXIT Pwe2KZ
+ENTER Motorbike REVUsn
+ENTER Car yYEsNE
+PASS_TIME 517
+PRINT
+ENTER Motorbike REVUsn
+ENTER Car ggyI
+INSPECT
+ENTER Handicapped 4MjSmaG
+PASS_TIME 24
+PASS_TIME 410
+EXIT 1ZcEqg
+INSPECT
+ENTER Car 1ZcEqg
+ENTER Motorbike nWNAm
+ENTER Motorbike zehn
+ENTER Motorbike REVUsn
+EXIT MyAUQl
+ENTER Motorbike REVUsn
+INSPECT
+ENTER Motorbike REVUsn
+INSPECT
+ENTER Motorbike zehn
+INSPECT
+INSPECT
+ENTER Handicapped 4MjSmaG
+ENTER Motorbike QvpEc04
+ENTER Car MyAUQl
+ENTER Motorbike REVUsn
+ENTER Motorbike 8uvZ
+ENTER Motorbike 7ASNc
+EXIT yYEsNE
+ENTER Handicapped 4MjSmaG
+ENTER Car ggyI
+EXIT Pwe2KZ
+ENTER Car ggyI
+ENTER Handicapped QIbAN
+INSPECT
+ENTER Handicapped 4MjSmaG
+ENTER Motorbike Knfyl
+ENTER Car yYEsNE
+ENTER Motorbike QvpEc04
+EXIT MyAUQl
+ENTER Handicapped 4MjSmaG
+ENTER Motorbike 8uvZ
+EXIT QvpEc04
+ENTER Car 1ZcEqg
+ENTER Car e8gBX
+EXIT 1ZcEqg
+ENTER Motorbike zehn
+ENTER Motorbike QvpEc04
+ENTER Car MyAUQl
+INSPECT
+PRINT
